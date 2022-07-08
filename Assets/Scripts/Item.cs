@@ -1,8 +1,7 @@
-using System;
 using UnityEngine;
-public class Item : MonoBehaviour, IInteractable
+public class Item : MonoBehaviour
 {
-    Transform tr;
+    private Transform tr;
     private GameObject _fluidsParent;
     private void Awake()
     {
