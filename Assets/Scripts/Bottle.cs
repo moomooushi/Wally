@@ -1,5 +1,5 @@
 using UnityEngine;
-public class Item : MonoBehaviour
+public class Bottle : MonoBehaviour
 {
     private Transform tr;
     private GameObject _fluidsParent;

@@ -68,7 +68,7 @@ public class PickUp: MonoBehaviour
 
     void PickUpObject(GameObject pickedObject)
     {
-        if (pickedObject.GetComponent<Rigidbody2D>() && pickedObject.GetComponent<Item>())
+        if (pickedObject.GetComponent<Rigidbody2D>() && pickedObject.GetComponent<Bottle>())
         {
             Rigidbody2D objectRigidBody = pickedObject.GetComponent<Rigidbody2D>();
 //            objectRigidBody.constraints = RigidbodyConstraints2D.FreezePosition;
