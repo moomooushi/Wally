@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
+
 public class PickUp: MonoBehaviour
 {
+    [SerializeField]
+    private float rotationSpeed = 1;
     [SerializeField]
     private GameObject heldObject;
     [SerializeField]
@@ -36,18 +39,16 @@ public class PickUp: MonoBehaviour
         {
             MoveObject();
             
-            if (Input.GetKeyDown(KeyCode.Q))
+            // This controls the rotation of the selected object
+            if (Input.GetKey(KeyCode.Q))
             {
-                RotateObject(heldObject, -1);
+                RotateObject(heldObject, new Vector3(0,0, -45f));
             }
-            if (Input.GetKeyDown(KeyCode.R))
+            if (Input.GetKey(KeyCode.R))
             {
-                RotateObject(heldObject, 1);
+                RotateObject(heldObject, new Vector3(0,0, 45f));
             }
         }
-        
-        
-        
     }
     
     private void MoveObject()
@@ -59,10 +60,10 @@ public class PickUp: MonoBehaviour
         }
     }
 
-    private void RotateObject(GameObject objectToRotate, float direction)
+    private void RotateObject(GameObject objectToRotate, Vector3 direction)
     {
         Debug.Log("Attempting to Rotate");
-        objectToRotate.GetComponent<Rigidbody2D>().AddTorque(direction, ForceMode2D.Force);
+        objectToRotate.GetComponent<Transform>().Rotate(direction * (rotationSpeed * Time.deltaTime));
     }
 
     void PickUpObject(GameObject pickedObject)
