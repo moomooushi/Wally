@@ -1,16 +1,20 @@
+using ScriptableObjects;
 using UnityEngine;
 public class Bottle : MonoBehaviour
 {
-    private Transform tr;
+    public BottleType bottleType;
+    private Transform _tr;
     private GameObject _fluidsParent;
+    private Sprite sprite;
     private void Awake()
     {
+        AssignBottleType();
         _fluidsParent = GameObject.Find("FluidsParent");
         if (!_fluidsParent)
         {
             _fluidsParent = Instantiate(new GameObject("FluidsParent"));
         }
-        tr = this.GetComponent<Transform>();
+        _tr = this.GetComponent<Transform>();
     }
     
     ///<summary>
@@ -21,7 +25,7 @@ public class Bottle : MonoBehaviour
     {
         if (other.GetComponent<Fluid>())
         {
-            other.transform.parent = tr;
+            other.transform.parent = _tr;
         }
     }
     ///<summary>
@@ -38,8 +42,9 @@ public class Bottle : MonoBehaviour
         }
     }
 
-//    public void ShootFluid()
-//    {
-//        Instantiate(liquidObject, tr.position, Quaternion.identity, tr);
-//    }
+    void AssignBottleType()
+    {
+        sprite = bottleType.sprite;
+        this.name = bottleType.bottleName;
+    }
 }
