@@ -7,6 +7,6 @@ namespace ScriptableObjects
     {
         public string bottleName;
         public Sprite sprite;
-        public Fluid fluidType;
+        public GameObject fluidPrefab;
     }
 }
