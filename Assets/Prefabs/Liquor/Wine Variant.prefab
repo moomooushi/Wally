@@ -75,5 +75,13 @@ PrefabInstance:
       propertyPath: bottleType
       value: 
       objectReference: {fileID: 11400000, guid: 3922e4caed351d9478826a09c15a3f15, type: 2}
+    - target: {fileID: 382778020130831223, guid: 08768d4efa04eb547b8192e141d74027, type: 3}
+      propertyPath: receptacleType
+      value: 
+      objectReference: {fileID: 11400000, guid: 3922e4caed351d9478826a09c15a3f15, type: 2}
+    - target: {fileID: 382778020130831223, guid: 08768d4efa04eb547b8192e141d74027, type: 3}
+      propertyPath: glassTransparency
+      value: 0.9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08768d4efa04eb547b8192e141d74027, type: 3}

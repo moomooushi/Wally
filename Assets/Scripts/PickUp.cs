@@ -40,11 +40,11 @@ public class PickUp: MonoBehaviour
             MoveObject();
             
             // This controls the rotation of the selected object
-            if (Input.GetKey(KeyCode.Q))
+            if (Input.GetKey(KeyCode.R))
             {
                 RotateObject(heldObject, new Vector3(0,0, -45f));
             }
-            if (Input.GetKey(KeyCode.R))
+            if (Input.GetKey(KeyCode.Q))
             {
                 RotateObject(heldObject, new Vector3(0,0, 45f));
             }
@@ -68,7 +68,7 @@ public class PickUp: MonoBehaviour
 
     void PickUpObject(GameObject pickedObject)
     {
-        if (pickedObject.GetComponent<Rigidbody2D>() && pickedObject.GetComponent<Bottle>())
+        if (pickedObject.GetComponent<Rigidbody2D>() && !pickedObject.CompareTag("Fluid"))
         {
             Rigidbody2D objectRigidBody = pickedObject.GetComponent<Rigidbody2D>();
 //            objectRigidBody.constraints = RigidbodyConstraints2D.FreezePosition;

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6012834946337894628}
   - component: {fileID: 6293676789665557098}
   m_Layer: 6
-  m_Name: atom
+  m_Name: Liquid_Atom
   m_TagString: Fluid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

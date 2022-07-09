@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Fluid_whiskey
   m_EditorClassIdentifier: 
   fluidColor: {r: 1, g: 0.37226275, b: 0, a: 1}
+  prefab: {fileID: 6963497365499002972, guid: ca4eef4d49a71e049916154ed1a89e6e, type: 3}
