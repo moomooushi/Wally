@@ -13,8 +13,7 @@ public abstract class Receptacle : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     [SerializeField] [Range(0,1)]
     private float glassTransparency = 0.9f;
-
-
+    
     private void Awake()
     {
         AssignReceptacleValues();
