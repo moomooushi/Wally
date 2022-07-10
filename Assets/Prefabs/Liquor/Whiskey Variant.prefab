@@ -53,7 +53,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 382778020130831220, guid: 08768d4efa04eb547b8192e141d74027, type: 3}
       propertyPath: m_Name
-      value: Whiskey
+      value: Whiskey Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 382778020130831222, guid: 08768d4efa04eb547b8192e141d74027, type: 3}
+      propertyPath: m_Size.y
+      value: 0.5631188
+      objectReference: {fileID: 0}
+    - target: {fileID: 382778020130831222, guid: 08768d4efa04eb547b8192e141d74027, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.17116593
       objectReference: {fileID: 0}
     - target: {fileID: 382778020130831223, guid: 08768d4efa04eb547b8192e141d74027, type: 3}
       propertyPath: fillCount
