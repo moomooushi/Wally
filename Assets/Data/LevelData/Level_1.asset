@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Level 1
   ingredientsList:
-  - fluid: {fileID: 11400000, guid: 3f8d5c6bd1a921f45a78f4bfe8228bff, type: 2}
-    count: 5
+  - fluid: {fileID: 0}
+    requirement: 0
+    count: 0
+    complete: 0
