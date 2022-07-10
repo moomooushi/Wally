@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9349c02cb8cf4732bb6f855428aa370c, type: 3}
-  m_Name: Bottle_whiskey
+  m_Script: {fileID: 11500000, guid: 78437f209390470291207ccffa51888e, type: 3}
+  m_Name: Glass_whiskey
   m_EditorClassIdentifier: 
-  name: Whiskey
-  sprite: {fileID: 21300000, guid: 761a193378fb88c4da98317dca172fd0, type: 3}
-  fluidPrefab: {fileID: 6963497365499002972, guid: ca4eef4d49a71e049916154ed1a89e6e, type: 3}
+  name: Whiskey Glass
+  sprite: {fileID: 21300000, guid: 73d0365a3c631a547a6c640bc8dded4a, type: 3}

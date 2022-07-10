@@ -6,5 +6,6 @@ namespace ScriptableObjects
     public class FluidType : ScriptableObject
     {
         public Color fluidColor;
+        public GameObject prefab;
     }
 }
