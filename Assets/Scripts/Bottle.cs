@@ -10,19 +10,12 @@ public class Bottle : Receptacle
     [Range(0,60)]
     public int fillCount = 50;
 
-    private void Awake()
+    private void OnEnable()
     {
-
         if (fluidType != null)
         {
             fluidPrefab = fluidType.prefab;
-            AssignReceptacleValues();
-            UpdateSpriteRenderer(receptacleType);
-            UpdateColliders();
-            AddTransparency();
         }
-        
-        receptacleTransform = GetComponent<Transform>();
     }
 
     private void Start()

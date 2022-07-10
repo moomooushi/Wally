@@ -14,6 +14,16 @@ public abstract class Receptacle : MonoBehaviour
     [SerializeField] [Range(0,1)]
     private float glassTransparency = 0.9f;
 
+
+    private void Awake()
+    {
+        AssignReceptacleValues();
+        UpdateSpriteRenderer(receptacleType);
+        UpdateColliders();
+        AddTransparency();
+        receptacleTransform = GetComponent<Transform>();
+    }
+
     public void UpdateColliders()
     {
         _ = gameObject.AddComponent(typeof(PolygonCollider2D)) as PolygonCollider2D;
