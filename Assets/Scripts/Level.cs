@@ -1,6 +1,3 @@
-using System;
-using System.Linq;
-using Events;
 using ScriptableObjects;
 using UnityEngine;
 
@@ -8,21 +5,16 @@ public class Level : MonoBehaviour
 {
     [SerializeField]
     private LevelData level;
-    [SerializeField]
+    [SerializeField][ReadOnly]
     private bool levelIsComplete;
 
-    private void OnEnable()
+    private void Update()
     {
-        GameEvents.OnFluidEnterGlassEvent += CheckCompleted;
-    }
-
-    private void OnDisable()
-    {
-        GameEvents.OnFluidEnterGlassEvent -= CheckCompleted;
+        CheckLevelCompleted();
     }
     
-    private void CheckCompleted()
+    private void CheckLevelCompleted()
     {
-        _ = level.ingredientsList.All(e => e.complete) && levelIsComplete;
+        _ = level.LevelComplete ? levelIsComplete = true : levelIsComplete = false;
     }
 }
