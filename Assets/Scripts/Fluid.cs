@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Events;
+using UnityEngine;
 using ScriptableObjects;
 
 public class Fluid : MonoBehaviour
@@ -16,7 +17,7 @@ public class Fluid : MonoBehaviour
             _fluidsParent = Instantiate(new GameObject("FluidsParent"));
         }
         _renderer = this.GetComponent<SpriteRenderer>();
-        _renderer.color = fluidType.fluidColor;
+        _renderer.color = fluidType.color;
     }
 
     private void Update()
@@ -36,6 +37,9 @@ public class Fluid : MonoBehaviour
         if (other.GetComponent<Receptacle>())
         {
             this.transform.parent = other.transform;
+            
+            if(other.GetComponent<Glass>())
+                GameEvents.OnIngredientEnterGlassEvent?.Invoke(this.fluidType);
         }
     }
 
@@ -51,6 +55,8 @@ public class Fluid : MonoBehaviour
             {
                 this.transform.parent = _fluidsParent.transform;
             }
+            if(other.GetComponent<Glass>())
+                GameEvents.OnIngredientExitGlassEvent?.Invoke(this.fluidType);
         }
     }
 }
