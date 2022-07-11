@@ -1,6 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12,9 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e92811c179d43a7ab0db77ef73869b1, type: 3}
   m_Name: Fluid_whiskey
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   fluidColor: {r: 1, g: 0.37226275, b: 0, a: 1}
-=======
-  fluidColor: {r: 1, g: 0.3673469, b: 0, a: 1}
->>>>>>> e951bae3ba33a2e1230a9ad4b966c53300cac773
   prefab: {fileID: 6963497365499002972, guid: ca4eef4d49a71e049916154ed1a89e6e, type: 3}
