@@ -13,6 +13,18 @@ public abstract class Receptacle : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     [SerializeField] [Range(0,1)]
     private float glassTransparency = 0.9f;
+<<<<<<< HEAD
+=======
+    
+    private void Awake()
+    {
+        AssignReceptacleValues();
+        UpdateSpriteRenderer(receptacleType);
+        UpdateColliders();
+        AddTransparency();
+        receptacleTransform = GetComponent<Transform>();
+    }
+>>>>>>> e951bae3ba33a2e1230a9ad4b966c53300cac773
 
     public void UpdateColliders()
     {
