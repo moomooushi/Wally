@@ -2,7 +2,7 @@
 
 namespace ScriptableObjects
 {
-    public abstract class Ingredient : ScriptableObject
+    public abstract class IngredientType : ScriptableObject
     {
         public Color color;
         public GameObject prefab;

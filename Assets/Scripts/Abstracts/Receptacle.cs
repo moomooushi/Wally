@@ -41,7 +41,8 @@ public abstract class Receptacle : MonoBehaviour
     
     public void AssignReceptacleValues()
     {
-        name = receptacleType.name;
+        if (receptacleType != null)
+            name = receptacleType.name;
     }
     
     public void AddTransparency()

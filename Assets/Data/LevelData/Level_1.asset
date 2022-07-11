@@ -14,8 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Level 1
   ingredientsList:
-  - ingredient: {fileID: 11400000, guid: 3f8d5c6bd1a921f45a78f4bfe8228bff, type: 2}
+  - ingredientType: {fileID: 11400000, guid: 080c5f0171153ab4fa08565e48d2e191, type: 2}
     requirement: 4
+    count: 0
+    complete: 0
+  - ingredientType: {fileID: 11400000, guid: 5b1e87e957de5a74f8b706ff70b19ff3, type: 2}
+    requirement: 10
     count: 0
     complete: 0
   _levelComplete: 0

@@ -1,10 +1,12 @@
 ﻿using System;
 using ScriptableObjects;
 using UnityEngine;
+using UnityEngine.Serialization;
+
 [Serializable]
 public class Entry
 {
-    public Ingredient ingredient;
+    [FormerlySerializedAs("ingredient")] public IngredientType ingredientType;
     public int requirement;
     [SerializeField][ReadOnly]
     private int count;

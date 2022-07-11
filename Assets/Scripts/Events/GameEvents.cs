@@ -4,8 +4,8 @@ namespace Events
 {
     public class GameEvents
     {
-        public delegate void FluidInGlass(Ingredient ingredient);
-        public delegate void FluidExitGlass(Ingredient ingredient);
+        public delegate void FluidInGlass(IngredientType ingredientType);
+        public delegate void FluidExitGlass(IngredientType ingredientType);
 
         public delegate void DetermineLevelCompletion();
         

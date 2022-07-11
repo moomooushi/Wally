@@ -3,5 +3,5 @@
 namespace ScriptableObjects
 {
     [CreateAssetMenu(fileName = "Fluid_", menuName = "Fluids/New Fluid", order = 0)]
-    public class FluidType : Ingredient {}
+    public class FluidType : IngredientType {}
 }

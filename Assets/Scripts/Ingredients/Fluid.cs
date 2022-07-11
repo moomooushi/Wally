@@ -2,13 +2,11 @@
 using UnityEngine;
 using ScriptableObjects;
 
-public class Fluid : MonoBehaviour
+public class Fluid : Ingredient
 {
+    
     public FluidType fluidType;
     private GameObject _fluidsParent;
-    private SpriteRenderer _renderer;
-    
-
     private void Start()
     {
         _fluidsParent = GameObject.Find("FluidsParent");
@@ -20,14 +18,6 @@ public class Fluid : MonoBehaviour
         _renderer.color = fluidType.color;
     }
 
-    private void Update()
-    {
-        if (gameObject.transform.position.y < -5)
-        {
-            Destroy(gameObject);
-        }
-    }
-    
     ///<summary>
     /// In order to have the physics respect the objects correctly we have to parent the
     /// fluid to the bottle when the fluid is inside the bottle

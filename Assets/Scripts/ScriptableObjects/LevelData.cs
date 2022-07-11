@@ -38,9 +38,9 @@ namespace ScriptableObjects
             ResetCounts();
         }
 
-        private void IncreaseCount(Ingredient ingredient)
+        private void IncreaseCount(IngredientType ingredientType)
         {
-            var i = ingredientsList.FirstOrDefault(s => s.ingredient == ingredient);
+            var i = ingredientsList.FirstOrDefault(s => s.ingredientType == ingredientType);
             
             if(i != null )
                 i.IncreaseCount();
@@ -48,9 +48,9 @@ namespace ScriptableObjects
             GameEvents.OnIngredientUpdatedEvent?.Invoke();
         }
         
-        private void ReduceCount(Ingredient ingredient)
+        private void ReduceCount(IngredientType ingredientType)
         {
-            var i = ingredientsList.FirstOrDefault(s => s.ingredient == ingredient);
+            var i = ingredientsList.FirstOrDefault(s => s.ingredientType == ingredientType);
            
             if(i != null )
                 i.ReduceCount();
