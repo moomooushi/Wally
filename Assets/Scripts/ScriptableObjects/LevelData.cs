@@ -20,16 +20,16 @@ namespace ScriptableObjects
         }
         private void OnEnable()
         {
-            GameEvents.OnFluidEnterGlassEvent += IncreaseCount;
-            GameEvents.OnFluidExitGlassEvent += ReduceCount;
-            GameEvents.OnFluidEnterGlassEvent += SetLevelCompleted;
+            GameEvents.OnIngredientEnterGlassEvent += IncreaseCount;
+            GameEvents.OnIngredientExitGlassEvent += ReduceCount;
+            GameEvents.OnIngredientUpdatedEvent += SetLevelCompleted;
         }
         
         private void OnDisable()
         {
-            GameEvents.OnFluidEnterGlassEvent -= IncreaseCount; 
-            GameEvents.OnFluidExitGlassEvent -= ReduceCount;
-            GameEvents.OnFluidEnterGlassEvent -= SetLevelCompleted;
+            GameEvents.OnIngredientEnterGlassEvent -= IncreaseCount; 
+            GameEvents.OnIngredientExitGlassEvent -= ReduceCount;
+            GameEvents.OnIngredientUpdatedEvent -= SetLevelCompleted;
             ResetCounts();
         }
 
@@ -44,6 +44,8 @@ namespace ScriptableObjects
             
             if(i != null )
                 i.IncreaseCount();
+            
+            GameEvents.OnIngredientUpdatedEvent?.Invoke();
         }
         
         private void ReduceCount(Ingredient ingredient)
@@ -52,6 +54,8 @@ namespace ScriptableObjects
            
             if(i != null )
                 i.ReduceCount();
+            
+            GameEvents.OnIngredientUpdatedEvent?.Invoke();
         }
 
         void ResetCounts()
@@ -64,10 +68,10 @@ namespace ScriptableObjects
             LevelComplete = false;
         }
 
-        private void SetLevelCompleted(Ingredient ingredient)
-        {
+        private void SetLevelCompleted()
+        { 
             Debug.Log("We tried to check if the level was complete");
-           LevelComplete = ingredientsList.All(s => s.complete);
+            LevelComplete = ingredientsList.All(s => s.complete);
         }
        
     }

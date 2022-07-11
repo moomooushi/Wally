@@ -39,7 +39,7 @@ public class Fluid : MonoBehaviour
             this.transform.parent = other.transform;
             
             if(other.GetComponent<Glass>())
-                GameEvents.OnFluidEnterGlassEvent?.Invoke(this.fluidType);
+                GameEvents.OnIngredientEnterGlassEvent?.Invoke(this.fluidType);
         }
     }
 
@@ -56,7 +56,7 @@ public class Fluid : MonoBehaviour
                 this.transform.parent = _fluidsParent.transform;
             }
             if(other.GetComponent<Glass>())
-                GameEvents.OnFluidExitGlassEvent?.Invoke(this.fluidType);
+                GameEvents.OnIngredientExitGlassEvent?.Invoke(this.fluidType);
         }
     }
 }

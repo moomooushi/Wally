@@ -7,7 +7,10 @@ namespace Events
         public delegate void FluidInGlass(Ingredient ingredient);
         public delegate void FluidExitGlass(Ingredient ingredient);
 
-        public static FluidInGlass OnFluidEnterGlassEvent;
-        public static FluidExitGlass OnFluidExitGlassEvent;
+        public delegate void DetermineLevelCompletion();
+        
+        public static FluidInGlass OnIngredientEnterGlassEvent;
+        public static FluidExitGlass OnIngredientExitGlassEvent;
+        public static DetermineLevelCompletion OnIngredientUpdatedEvent;
     }
 }

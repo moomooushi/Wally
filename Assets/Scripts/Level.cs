@@ -15,6 +15,6 @@ public class Level : MonoBehaviour
     
     private void CheckLevelCompleted()
     {
-        _ = level.LevelComplete ? levelIsComplete = true : levelIsComplete = false;
+        levelIsComplete = level.LevelComplete;
     }
 }
