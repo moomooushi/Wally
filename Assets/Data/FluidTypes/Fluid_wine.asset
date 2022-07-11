@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e92811c179d43a7ab0db77ef73869b1, type: 3}
   m_Name: Fluid_wine
   m_EditorClassIdentifier: 
-  fluidColor: {r: 1, g: 0.71678406, b: 0.23113209, a: 0}
+  color: {r: 0.7169812, g: 0, b: 0, a: 1}
+  prefab: {fileID: 6963497365499002972, guid: ca4eef4d49a71e049916154ed1a89e6e, type: 3}

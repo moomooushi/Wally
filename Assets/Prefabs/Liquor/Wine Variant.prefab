@@ -86,7 +86,7 @@ PrefabInstance:
     - target: {fileID: 382778020130831223, guid: 08768d4efa04eb547b8192e141d74027, type: 3}
       propertyPath: fluidType
       value: 
-      objectReference: {fileID: 11400000, guid: 43804bb3a79ee3d4da4f7185d39b2f45, type: 2}
+      objectReference: {fileID: 11400000, guid: 5b1e87e957de5a74f8b706ff70b19ff3, type: 2}
     - target: {fileID: 382778020130831223, guid: 08768d4efa04eb547b8192e141d74027, type: 3}
       propertyPath: bottleType
       value: 
