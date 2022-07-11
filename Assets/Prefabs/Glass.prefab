@@ -48,9 +48,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0abfb0cee154669854468acc2f4530e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 0}
-  receptacleTransform: {fileID: 0}
   receptacleType: {fileID: 0}
+  receptacleTransform: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  glassTransparency: 0.9
 --- !u!212 &372679884225082880
 SpriteRenderer:
   m_ObjectHideFlags: 0

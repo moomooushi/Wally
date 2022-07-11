@@ -12,24 +12,10 @@ public class Bottle : Receptacle
 
     private void OnEnable()
     {
-<<<<<<< HEAD
-
-        if (fluidType != null)
-        {
-            fluidPrefab = fluidType.prefab;
-            AssignReceptacleValues();
-            UpdateSpriteRenderer(receptacleType);
-            UpdateColliders();
-            AddTransparency();
-        }
-        
-        receptacleTransform = GetComponent<Transform>();
-=======
         if (fluidType != null)
         {
             fluidPrefab = fluidType.prefab;
         }
->>>>>>> e951bae3ba33a2e1230a9ad4b966c53300cac773
     }
 
     private void Start()
