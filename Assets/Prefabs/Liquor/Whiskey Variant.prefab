@@ -1,5 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3013077103265160199
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -61,10 +62,6 @@ PrefabInstance:
     - target: {fileID: 382778020130831222, guid: 08768d4efa04eb547b8192e141d74027, type: 3}
       propertyPath: m_Offset.y
       value: -0.17116593
-      objectReference: {fileID: 0}
-    - target: {fileID: 382778020130831223, guid: 08768d4efa04eb547b8192e141d74027, type: 3}
-      propertyPath: fillCount
-      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 382778020130831223, guid: 08768d4efa04eb547b8192e141d74027, type: 3}
       propertyPath: fillCount
