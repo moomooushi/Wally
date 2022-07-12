@@ -11,6 +11,8 @@ public class Level : MonoBehaviour
     private bool levelIsComplete;
     [SerializeField]
     private float levelCompleteTimeOut = 5;
+    private bool _runCoroutine;
+
     private void Update()
     {
         CheckLevelCompleted();
@@ -19,13 +21,16 @@ public class Level : MonoBehaviour
     private void CheckLevelCompleted()
     {
         levelIsComplete = level.LevelComplete;
-        if (levelIsComplete) StartCoroutine(EndLevel());
+        if (levelIsComplete && _runCoroutine)
+        {
+            _runCoroutine = false;
+            StartCoroutine(EndLevel());
+        }
     }
 
     IEnumerator EndLevel()
     {
         yield return new WaitForSeconds(levelCompleteTimeOut);
-        SceneManager.LoadScene("LevelCompleteScene", LoadSceneMode.Additive);
-        Destroy(this);
+        SceneManager.LoadScene("LevelCompleteScene");
     }
 }
