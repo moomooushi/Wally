@@ -160,15 +160,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5929170693297915204, guid: 64fae4dd66c7e1045b0a121b335c3d7f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5929170693297915204, guid: 64fae4dd66c7e1045b0a121b335c3d7f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadNextScene
+      value: LoadScene
       objectReference: {fileID: 0}
     - target: {fileID: 5929170693297915204, guid: 64fae4dd66c7e1045b0a121b335c3d7f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: SceneUtility, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929170693297915204, guid: 64fae4dd66c7e1045b0a121b335c3d7f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Scenes/Level 2
       objectReference: {fileID: 0}
     - target: {fileID: 5929170693297915205, guid: 64fae4dd66c7e1045b0a121b335c3d7f, type: 3}
       propertyPath: m_Pivot.x
