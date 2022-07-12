@@ -26,7 +26,6 @@ public class Level : MonoBehaviour
     {
         yield return new WaitForSeconds(levelCompleteTimeOut);
         SceneManager.LoadScene("LevelCompleteScene", LoadSceneMode.Additive);
+        Destroy(this);
     }
-
-    
 }
