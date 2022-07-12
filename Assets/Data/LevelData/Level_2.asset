@@ -13,5 +13,13 @@ MonoBehaviour:
   m_Name: Level_2
   m_EditorClassIdentifier: 
   name: Level 2
-  ingredientsList: []
-  _levelComplete: 0
+  ingredientsList:
+  - ingredientType: {fileID: 11400000, guid: a5b7d5fc014716a4489e175044eabd9c, type: 2}
+    requirement: 10
+    count: 10
+    complete: 1
+  - ingredientType: {fileID: 11400000, guid: 5b1e87e957de5a74f8b706ff70b19ff3, type: 2}
+    requirement: 10
+    count: 14
+    complete: 1
+  _levelComplete: 1
