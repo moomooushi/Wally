@@ -17,6 +17,7 @@ public class PickUp: MonoBehaviour
     {
         _mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         holdParent.transform.position = _mousePosition;
+
         if (Input.GetMouseButtonDown(0))
         {
             if (heldObject == null)

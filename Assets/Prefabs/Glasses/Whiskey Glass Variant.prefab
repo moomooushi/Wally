@@ -167,5 +167,6 @@ PrefabInstance:
       propertyPath: receptacleType
       value: 
       objectReference: {fileID: 11400000, guid: 924bbf57d8b6b3349b76bed31e81389a, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2269788128962919880, guid: 47d853454ff603447a8f958a7bb52dd6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 47d853454ff603447a8f958a7bb52dd6, type: 3}
