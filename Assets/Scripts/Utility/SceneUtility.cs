@@ -14,4 +14,10 @@ public class SceneUtility : MonoBehaviour
         Debug.Log("Load scene " + sceneToLoad);
         SceneManager.LoadScene(sceneToLoad);
     }
+
+    public static void LoadNextScene()
+    {
+        int index = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(index++);
+    }
 }
