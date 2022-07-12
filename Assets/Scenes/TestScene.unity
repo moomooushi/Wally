@@ -555,6 +555,71 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1883373607
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 382778020130831218, guid: 08768d4efa04eb547b8192e141d74027, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 382778020130831218, guid: 08768d4efa04eb547b8192e141d74027, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.385
+      objectReference: {fileID: 0}
+    - target: {fileID: 382778020130831218, guid: 08768d4efa04eb547b8192e141d74027, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.143
+      objectReference: {fileID: 0}
+    - target: {fileID: 382778020130831218, guid: 08768d4efa04eb547b8192e141d74027, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 382778020130831218, guid: 08768d4efa04eb547b8192e141d74027, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 382778020130831218, guid: 08768d4efa04eb547b8192e141d74027, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 382778020130831218, guid: 08768d4efa04eb547b8192e141d74027, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 382778020130831218, guid: 08768d4efa04eb547b8192e141d74027, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 382778020130831218, guid: 08768d4efa04eb547b8192e141d74027, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 382778020130831218, guid: 08768d4efa04eb547b8192e141d74027, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 382778020130831218, guid: 08768d4efa04eb547b8192e141d74027, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 382778020130831220, guid: 08768d4efa04eb547b8192e141d74027, type: 3}
+      propertyPath: m_Name
+      value: Bottle
+      objectReference: {fileID: 0}
+    - target: {fileID: 382778020130831223, guid: 08768d4efa04eb547b8192e141d74027, type: 3}
+      propertyPath: fluidType
+      value: 
+      objectReference: {fileID: 11400000, guid: eadfdd55ea9fb9945b3cb6b764dbae5b, type: 2}
+    - target: {fileID: 382778020130831223, guid: 08768d4efa04eb547b8192e141d74027, type: 3}
+      propertyPath: receptacleType
+      value: 
+      objectReference: {fileID: 11400000, guid: fc7f6cf92a04b5f4984bd2585da6db9c, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 08768d4efa04eb547b8192e141d74027, type: 3}
 --- !u!1001 &1966956230
 PrefabInstance:
   m_ObjectHideFlags: 0

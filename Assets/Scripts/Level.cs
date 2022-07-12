@@ -1,5 +1,6 @@
 using ScriptableObjects;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour
 {
@@ -12,9 +13,11 @@ public class Level : MonoBehaviour
     {
         CheckLevelCompleted();
     }
-    
+
     private void CheckLevelCompleted()
     {
         levelIsComplete = level.LevelComplete;
     }
+
+    
 }

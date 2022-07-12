@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9349c02cb8cf4732bb6f855428aa370c, type: 3}
   m_Name: Bottle_beer
   m_EditorClassIdentifier: 
-  bottleName: 
-  sprite: {fileID: 0}
-  fluidPrefab: {fileID: 0}
+  name: Beer
+  sprite: {fileID: 21300000, guid: f7267b97540d33e4aa6f5fb481bfbbaa, type: 3}

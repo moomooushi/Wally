@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 372679884225082887}
   - component: {fileID: 6511282111921027447}
+  - component: {fileID: -2269788128962919880}
   - component: {fileID: 372679884225082880}
   - component: {fileID: 372679884225082881}
   - component: {fileID: 5907842282513624094}
@@ -52,6 +53,22 @@ MonoBehaviour:
   receptacleTransform: {fileID: 0}
   spriteRenderer: {fileID: 0}
   glassTransparency: 0.9
+--- !u!114 &-2269788128962919880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372679884225082883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cea6f724faa436c8de5691f3b37cb63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 0
+  heldObject: {fileID: 372679884225082883}
+  holdParent: {fileID: 0}
+  moveForce: 250
 --- !u!212 &372679884225082880
 SpriteRenderer:
   m_ObjectHideFlags: 0
