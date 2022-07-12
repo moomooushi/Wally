@@ -2,6 +2,7 @@ using System.Collections;
 using ScriptableObjects;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class Level : MonoBehaviour
 {
@@ -11,7 +12,8 @@ public class Level : MonoBehaviour
     private bool levelIsComplete;
     [SerializeField]
     private float levelCompleteTimeOut = 5;
-    private bool _runCoroutine;
+    [SerializeField][ReadOnly]
+    private bool runCoroutine = true;
 
     private void Update()
     {
@@ -21,9 +23,9 @@ public class Level : MonoBehaviour
     private void CheckLevelCompleted()
     {
         levelIsComplete = level.LevelComplete;
-        if (levelIsComplete && _runCoroutine)
+        if (levelIsComplete && runCoroutine)
         {
-            _runCoroutine = false;
+            runCoroutine = false;
             StartCoroutine(EndLevel());
         }
     }
