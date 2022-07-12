@@ -18,6 +18,6 @@ public class SceneUtility : MonoBehaviour
     public static void LoadNextScene()
     {
         int index = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(index++);
+        SceneManager.LoadScene(index + 1);
     }
 }
