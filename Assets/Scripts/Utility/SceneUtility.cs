@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneManager : MonoBehaviour
+public class SceneUtility : MonoBehaviour
 {
     public static void LoadScene(int sceneToLoad)
     {
