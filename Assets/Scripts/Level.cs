@@ -14,7 +14,9 @@ public class Level : MonoBehaviour
     private float levelCompleteTimeOut = 5;
     [SerializeField][ReadOnly]
     private bool runCoroutine = true;
-
+    
+    // todo: this needs to be refactored so that level progression is dynamic
+    [SerializeField] public string sceneToLoad = "LevelCompleteScene";
     private void Update()
     {
         CheckLevelCompleted();
@@ -33,6 +35,7 @@ public class Level : MonoBehaviour
     IEnumerator EndLevel()
     {
         yield return new WaitForSeconds(levelCompleteTimeOut);
-        SceneManager.LoadScene("LevelCompleteScene");
+        if(sceneToLoad != null)
+            SceneManager.LoadScene(sceneToLoad);
     }
 }
