@@ -969,6 +969,8 @@ MonoBehaviour:
   level: {fileID: 11400000, guid: bdb811d67a1351a4d93cc61afba95f8d, type: 2}
   levelIsComplete: 0
   levelCompleteTimeOut: 5
+  runCoroutine: 1
+  sceneToLoad: LevelCompleteScene 2
 --- !u!4 &250120560
 Transform:
   m_ObjectHideFlags: 0
