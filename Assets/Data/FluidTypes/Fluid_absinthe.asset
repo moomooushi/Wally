@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e92811c179d43a7ab0db77ef73869b1, type: 3}
   m_Name: Fluid_absinthe
   m_EditorClassIdentifier: 
-  color: {r: 0.008677464, g: 0.3679245, b: 0.124826275, a: 1}
+  color: {r: 0, g: 0.9056604, b: 0.2953241, a: 1}
   prefab: {fileID: 6963497365499002972, guid: ca4eef4d49a71e049916154ed1a89e6e, type: 3}
