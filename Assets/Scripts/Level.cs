@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using ScriptableObjects;
 using UnityEngine;
@@ -16,6 +17,12 @@ public class Level : MonoBehaviour
     
     // todo: this needs to be refactored so that level progression is dynamic
     [SerializeField] public string sceneToLoad = "LevelCompleteScene";
+
+    private void Start()
+    {
+        levelIsComplete = false;
+    }
+
     private void Update()
     {
         CheckLevelCompleted();
