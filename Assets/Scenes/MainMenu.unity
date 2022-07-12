@@ -535,7 +535,7 @@ MonoBehaviour:
   isActive: 1
   isValid: 1
   target: {fileID: 93683169}
-  animationType: 6
+  animationType: 7
   targetType: 15
   forcedTargetType: 0
   autoPlay: 1
@@ -647,7 +647,7 @@ MonoBehaviour:
   isActive: 1
   isValid: 1
   target: {fileID: 161117507}
-  animationType: 6
+  animationType: 7
   targetType: 3
   forcedTargetType: 0
   autoPlay: 1
@@ -1164,7 +1164,7 @@ MonoBehaviour:
   isActive: 1
   isValid: 1
   target: {fileID: 1865281444}
-  animationType: 6
+  animationType: 7
   targetType: 15
   forcedTargetType: 0
   autoPlay: 1
