@@ -2,7 +2,6 @@ using System.Collections;
 using ScriptableObjects;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 public class Level : MonoBehaviour
 {
@@ -35,7 +34,9 @@ public class Level : MonoBehaviour
     IEnumerator EndLevel()
     {
         yield return new WaitForSeconds(levelCompleteTimeOut);
-        if(sceneToLoad != null)
+        if(sceneToLoad != null) {
+            StopAllCoroutines();
             SceneManager.LoadScene(sceneToLoad);
+        }
     }
 }
