@@ -529,10 +529,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pixel Perfect Camera
       objectReference: {fileID: 0}
-    - target: {fileID: 3179211232121461376, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
-      propertyPath: m_Dithering
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
 --- !u!4 &159009022 stripped
