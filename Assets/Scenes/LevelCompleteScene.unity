@@ -188,94 +188,13 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1181766820 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4052378038615103951, guid: 64c11f9a33175a642aefcc39dd62a128, type: 3}
   m_PrefabInstance: {fileID: 4052378039589211499}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1559476539
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2676324404616276844, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676324404616276844, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676324404616276844, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676324404616276844, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676324404616276844, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676324404616276844, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676324404616276844, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676324404616276844, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676324404616276844, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676324404616276844, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676324404616276844, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676324404616276845, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
-      propertyPath: m_ClearFlags
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676324404616276845, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
-      propertyPath: m_BackGroundColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676324404616276845, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0.16862746
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676324404616276845, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0.15686275
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676324404616276845, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0.21176471
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676324404616276851, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
-      propertyPath: m_Name
-      value: Pixel Perfect Camera
-      objectReference: {fileID: 0}
-    - target: {fileID: 3179211232121461376, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
-      propertyPath: m_Dithering
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
 --- !u!1 &1982593398
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,7 +289,7 @@ RectTransform:
   m_Children:
   - {fileID: 1181766820}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
