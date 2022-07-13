@@ -8,6 +8,7 @@ namespace ScriptableObjects
     [CreateAssetMenu(fileName = "PlayerSessionData_", menuName = "Session Data/New Player Session Data", order = 0)]
     public class PlayerSessionData : ScriptableObject
     {
+        [SerializeField][ReadOnly]
         private float _currentCash;
         public List<BottleType> inventory = new();
 
