@@ -51,7 +51,7 @@ public class Level : MonoBehaviour
         yield return new WaitForSeconds(levelCompleteTimeOut);
         if(sceneToLoad != null) {
             StopAllCoroutines();
-            SceneManager.LoadScene(sceneToLoad, LoadSceneMode.Additive);
+            SceneManager.LoadScene(sceneToLoad);
         }
     }
 }

@@ -1,14 +1,17 @@
-using System;
 using ScriptableObjects;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
+    public static Player Instance = null;
     private PlayerSessionData playerData;
-
+    
     private void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
     }
 }
