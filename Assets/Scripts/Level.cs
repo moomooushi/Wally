@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Events;
 using ScriptableObjects;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -23,27 +24,37 @@ public class Level : MonoBehaviour
         levelIsComplete = false;
     }
 
-    private void Update()
+    private void OnEnable()
     {
-        CheckLevelCompleted();
+        GameEvents.OnLevelCompletedEvent += CheckLevelCompleted;
+    }
+    
+    private void OnDisable()
+    {
+        GameEvents.OnLevelCompletedEvent -= CheckLevelCompleted;
     }
 
     private void CheckLevelCompleted()
     {
         levelIsComplete = level.LevelComplete;
+        LoadEndScene();
+    }
+
+    private void LoadEndScene()
+    {
         if (levelIsComplete && runCoroutine)
         {
             runCoroutine = false;
-            StartCoroutine(EndLevel());
-        }
+            StartCoroutine(DelayEndSceneLoad());
+        } 
     }
-
-    IEnumerator EndLevel()
+    
+    IEnumerator DelayEndSceneLoad()
     {
         yield return new WaitForSeconds(levelCompleteTimeOut);
         if(sceneToLoad != null) {
             StopAllCoroutines();
-            SceneManager.LoadScene(sceneToLoad);
+            SceneManager.LoadScene(sceneToLoad, LoadSceneMode.Additive);
         }
     }
 }

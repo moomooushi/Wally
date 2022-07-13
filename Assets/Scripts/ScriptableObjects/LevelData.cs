@@ -16,7 +16,14 @@ namespace ScriptableObjects
         public bool LevelComplete
         {
             get => _levelComplete;
-            private set => _levelComplete = value;
+            private set
+            {
+                _levelComplete = value;
+                if (_levelComplete == true)
+                {
+                    GameEvents.OnLevelCompletedEvent?.Invoke();
+                }
+            }
         }
         private void OnEnable()
         {
