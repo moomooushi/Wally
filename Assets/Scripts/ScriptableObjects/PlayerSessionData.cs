@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Events;
 using UnityEngine;
 
@@ -31,6 +30,7 @@ namespace ScriptableObjects
         public void UpdateCurrentCash(float valueToAdd)
         {
             CurrentCash += valueToAdd;
+            GameEvents.OnWalletUpdatedEvent?.Invoke(CurrentCash);
         }
 
         void UpdateInventory(BottleType bottleType)

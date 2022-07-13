@@ -9,11 +9,13 @@ namespace Events
         public delegate void DetermineLevelCompletion();
         public delegate void LevelCompleted();
         public delegate void UpdateWallet(float valueToAdd);
+        public delegate void WalletUpdated(float value);
         
         public static FluidInGlass OnIngredientEnterGlassEvent;
         public static FluidExitGlass OnIngredientExitGlassEvent;
         public static DetermineLevelCompletion OnIngredientUpdatedEvent;
         public static LevelCompleted OnLevelCompletedEvent;
         public static UpdateWallet OnUpdateWalletEvent;
+        public static WalletUpdated OnWalletUpdatedEvent;
     }
 }

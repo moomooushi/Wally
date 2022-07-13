@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Level : MonoBehaviour
 {
     [SerializeField]
-    private LevelData level;
+    public LevelData level;
     [SerializeField][ReadOnly]
     private bool levelIsComplete;
     [SerializeField]

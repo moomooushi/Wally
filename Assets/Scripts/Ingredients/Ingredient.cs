@@ -1,15 +1,18 @@
 ﻿using UnityEngine;
 
-public abstract class Ingredient : MonoBehaviour
+namespace Ingredients
 {
-    public SpriteRenderer _renderer;
-
-    private void Update()
+    public abstract class Ingredient : MonoBehaviour
     {
-        if (gameObject.transform.position.y < -5)
-        {
-            Destroy(gameObject);
-        }
-    }
+        public SpriteRenderer _renderer;
 
+        private void Update()
+        {
+            if (gameObject.transform.position.y < -5)
+            {
+                Destroy(gameObject);
+            }
+        }
+
+    }
 }

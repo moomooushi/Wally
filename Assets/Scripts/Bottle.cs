@@ -1,3 +1,4 @@
+using Ingredients;
 using ScriptableObjects;
 using UnityEngine;
 
