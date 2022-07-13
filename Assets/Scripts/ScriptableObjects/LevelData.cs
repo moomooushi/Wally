@@ -11,6 +11,7 @@ namespace ScriptableObjects
         public new string name;
         public List<Entry> ingredientsList = new();
         public float cashReward;
+        private bool rewardGiven = false;
         [SerializeField]
         private bool _levelComplete;
         public bool LevelComplete
@@ -21,7 +22,13 @@ namespace ScriptableObjects
                 _levelComplete = value;
                 if (_levelComplete == true)
                 {
-                    GameEvents.OnUpdateWalletEvent?.Invoke(cashReward);
+
+                    if (rewardGiven == false)
+                    {
+                        rewardGiven = true;
+                        GameEvents.OnUpdateWalletEvent?.Invoke(cashReward);
+                    } 
+                        
                     GameEvents.OnLevelCompletedEvent?.Invoke();
                 }
             }
