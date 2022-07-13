@@ -6,5 +6,6 @@ namespace ScriptableObjects
     {
         public Color color;
         public GameObject prefab;
+        public float ingredientPrice;
     }
 }

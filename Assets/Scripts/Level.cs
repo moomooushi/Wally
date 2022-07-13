@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using Events;
 using ScriptableObjects;
@@ -15,9 +14,7 @@ public class Level : MonoBehaviour
     private float levelCompleteTimeOut = 5;
     [SerializeField][ReadOnly]
     private bool runCoroutine = true;
-    
-    // todo: this needs to be refactored so that level progression is dynamic
-    [SerializeField] public string sceneToLoad = "LevelCompleteScene";
+    [SerializeField] private string sceneToLoad = "LevelCompleteScene";
 
     private void Start()
     {
