@@ -44,7 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25fc436b340847688032672abe3bff59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelStringStructure: 
   previousLevel: 
   currentLevel: 
   nextLevel: 
+  currentSceneBuildID: 0
+  currentLevelData: {fileID: 0}
+  levelCompleteUI: {fileID: 6766251061083799029, guid: d80e9da2cf82a7345b9d99ecb9b206b3, type: 3}
+  runCoroutine: 1
