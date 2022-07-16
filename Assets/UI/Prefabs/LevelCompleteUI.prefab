@@ -356,7 +356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7670849591769710994, guid: 64c11f9a33175a642aefcc39dd62a128, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadNextScene
+      value: LoadNextSceneEvent
       objectReference: {fileID: 0}
     - target: {fileID: 7670849591769710995, guid: 64c11f9a33175a642aefcc39dd62a128, type: 3}
       propertyPath: m_AnchorMax.y

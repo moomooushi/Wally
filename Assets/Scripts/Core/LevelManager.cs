@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using Events;
 using ScriptableObjects;
 using UnityEngine;
@@ -19,17 +18,26 @@ namespace Core
         private float levelCompleteTimeOut = 5;
         public GameObject levelCompleteUI;
         [SerializeField][ReadOnly]
-        private bool runCoroutine = true;
+        private bool runCoroutine;
 
+        public bool RunCoroutine
+        {
+            get => runCoroutine;
+            private set => runCoroutine = value;
+        }
         
         private void OnEnable()
         {
-            GameEvents.OnLoadNextLevelEvent += LoadEndScene;
+            SceneManager.sceneLoaded += OnSceneLoaded;
+            GameEvents.OnShowLevelEndStateEvent += LoadEndState;
+            GameEvents.OnLoadNextSceneEvent += LoadNextScene;
         }
 
         private void OnDisable()
         {
-            GameEvents.OnLoadNextLevelEvent -= LoadEndScene;
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+            GameEvents.OnShowLevelEndStateEvent -= LoadEndState;
+            GameEvents.OnLoadNextSceneEvent -= LoadNextScene;
         }
 
         private void Awake()
@@ -40,9 +48,47 @@ namespace Core
                 DontDestroyOnLoad(this.gameObject);
             }
 
+            RunCoroutine = true;
         }
 
         private void Start()
+        {
+            
+        }
+
+        static string UpdateLevelString(string id, int increment)
+        {
+            string[] arr = id.Split(" ");
+            return arr[0] + " " + (int.Parse(arr[1]) + increment);
+        }
+        
+        private void LoadEndState()
+        {
+            RunCoroutine = false;
+            StartCoroutine(DelayEndStateLoad());
+        }
+        
+        IEnumerator DelayEndStateLoad()
+        {
+            yield return new WaitForSeconds(levelCompleteTimeOut);
+            StopAllCoroutines();
+            if(levelCompleteUI != null && RunCoroutine == false)
+            {
+                RunCoroutine = true;
+                Instantiate(levelCompleteUI);
+            }
+        }
+
+        private void LoadNextScene()
+        {
+            StopAllCoroutines();
+            if (currentLevel != null)
+                SceneManager.LoadScene(nextLevel);
+            else
+                SceneManager.LoadScene(currentSceneBuildID + 1);
+        }
+
+        public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
             currentSceneBuildID = SceneManager.GetActiveScene().buildIndex;
             
@@ -53,28 +99,6 @@ namespace Core
             _ = currentLevel == "Level 1" ? previousLevel = null : previousLevel = UpdateLevelString(currentLevel, -1);
             nextLevel = UpdateLevelString(currentLevel, 1);
         }
-
-        static string UpdateLevelString(string id, int increment)
-        {
-            string[] arr = id.Split(" ");
-            return arr[0] + " " + (int.Parse(arr[1]) + increment);
-        }
         
-        private void LoadEndScene()
-        {
-            runCoroutine = false;
-            StartCoroutine(DelayEndSceneLoad());
-        }
-        
-        IEnumerator DelayEndSceneLoad()
-        {
-            yield return new WaitForSeconds(levelCompleteTimeOut);
-            StopAllCoroutines();
-            if(levelCompleteUI != null)
-            {
-                runCoroutine = true;
-                Instantiate(levelCompleteUI);
-            }
-        }
     }
 }

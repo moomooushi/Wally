@@ -29,10 +29,6 @@ public class Level : MonoBehaviour
     {
         levelIsComplete = levelData.LevelComplete;
         if(levelIsComplete) 
-            GameEvents.OnLoadNextLevelEvent?.Invoke();
+            GameEvents.OnShowLevelEndStateEvent?.Invoke();
     }
-
-    
-    
-    
 }

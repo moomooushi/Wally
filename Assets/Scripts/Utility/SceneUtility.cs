@@ -1,4 +1,6 @@
+using Events;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class SceneUtility : MonoBehaviour
@@ -15,9 +17,14 @@ public class SceneUtility : MonoBehaviour
         SceneManager.LoadScene(sceneToLoad);
     }
 
-    public static void LoadNextScene()
+    public static void LoadNextSceneInBuild()
     {
         int index = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(index + 1);
+    }
+
+    public static void LoadNextSceneEvent()
+    {
+        GameEvents.OnLoadNextSceneEvent?.Invoke();
     }
 }

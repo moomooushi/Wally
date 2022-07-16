@@ -8,9 +8,10 @@ namespace Events
         public delegate void FluidExitGlass(IngredientType ingredientType);
         public delegate void DetermineLevelCompletion();
         public delegate void LevelCompleted();
-        public delegate void LoadNextLevel();
+        public delegate void LoadEndState();
         public delegate void UpdateWallet(float valueToAdd);
         public delegate void WalletUpdated(float value);
+        public delegate void NextScene();
         
         public static FluidInGlass OnIngredientEnterGlassEvent;
         public static FluidExitGlass OnIngredientExitGlassEvent;
@@ -18,6 +19,7 @@ namespace Events
         public static LevelCompleted OnLevelCompletedEvent;
         public static UpdateWallet OnUpdateWalletEvent;
         public static WalletUpdated OnWalletUpdatedEvent;
-        public static LoadNextLevel OnLoadNextLevelEvent;
+        public static LoadEndState OnShowLevelEndStateEvent;
+        public static NextScene OnLoadNextSceneEvent;
     }
 }
