@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Events;
+using UnityEngine.Serialization;
 
 namespace ScriptableObjects
 {
@@ -11,21 +12,21 @@ namespace ScriptableObjects
         public new string name;
         public List<Entry> ingredientsList = new();
         public float cashReward;
-        private bool rewardGiven = false;
-        [SerializeField]
-        private bool _levelComplete;
+        private bool _rewardGiven = false;
+        [FormerlySerializedAs("_levelComplete")] [SerializeField]
+        private bool levelComplete;
         public bool LevelComplete
         {
-            get => _levelComplete;
+            get => levelComplete;
             private set
             {
-                _levelComplete = value;
-                if (_levelComplete == true)
+                levelComplete = value;
+                if (levelComplete == true)
                 {
 
-                    if (rewardGiven == false)
+                    if (_rewardGiven == false)
                     {
-                        rewardGiven = true;
+                        _rewardGiven = true;
                         GameEvents.OnUpdateWalletEvent?.Invoke(cashReward);
                     } 
                         

@@ -35,10 +35,7 @@ namespace Core
         
         private void UpdatePlayerCash(float value)
         {
-            if (playerData != null)
-            {
-                playerCash = value;
-            }
+            playerCash = value;
         }
     }
 }

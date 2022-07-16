@@ -27,7 +27,7 @@ namespace ScriptableObjects
             GameEvents.OnUpdateWalletEvent -= UpdateCurrentCash;
         }
 
-        public void UpdateCurrentCash(float valueToAdd)
+        private void UpdateCurrentCash(float valueToAdd)
         {
             CurrentCash += valueToAdd;
             GameEvents.OnWalletUpdatedEvent?.Invoke(CurrentCash);

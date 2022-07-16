@@ -51,11 +51,6 @@ namespace Core
             RunCoroutine = true;
         }
 
-        private void Start()
-        {
-            
-        }
-
         static string UpdateLevelString(string id, int increment)
         {
             string[] arr = id.Split(" ");
