@@ -12,6 +12,7 @@ namespace ScriptableObjects
         public new string name;
         public List<Entry> ingredientsList = new();
         public float cashReward;
+        [SerializeField]
         private bool _rewardGiven = false;
         [FormerlySerializedAs("_levelComplete")] [SerializeField]
         private bool levelComplete;
@@ -46,12 +47,12 @@ namespace ScriptableObjects
             GameEvents.OnIngredientEnterGlassEvent -= IncreaseCount; 
             GameEvents.OnIngredientExitGlassEvent -= ReduceCount;
             GameEvents.OnIngredientUpdatedEvent -= SetLevelCompleted;
-            ResetCounts();
+            ResetValues();
         }
 
         private void Reset()
         {
-            ResetCounts();
+            ResetValues();
         }
 
         private void IncreaseCount(IngredientType ingredientType)
@@ -74,7 +75,7 @@ namespace ScriptableObjects
             GameEvents.OnIngredientUpdatedEvent?.Invoke();
         }
 
-        void ResetCounts()
+        void ResetValues()
         {
             foreach (Entry entry in ingredientsList)
             {
@@ -82,6 +83,7 @@ namespace ScriptableObjects
             }
 
             LevelComplete = false;
+            _rewardGiven = false;
         }
 
         private void SetLevelCompleted()
