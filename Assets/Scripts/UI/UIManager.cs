@@ -10,7 +10,6 @@ namespace UI
         private TMP_Text currentCashText;
         private void OnEnable()
         {
-           
             GameEvents.OnWalletUpdatedEvent += UpdateCash;
         }
         private void OnDisable()
@@ -19,6 +18,9 @@ namespace UI
         }
         private void UpdateCash(float value)
         {
+            if (currentCashText == null)
+                return;
+            
             currentCashText.text = value.ToString();
         }
 
