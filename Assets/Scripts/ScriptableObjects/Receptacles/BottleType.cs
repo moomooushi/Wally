@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace ScriptableObjects
+namespace ScriptableObjects.Receptacles
 {
     [CreateAssetMenu(fileName = "Bottle_", menuName = "Bottles/New Bottle Type", order = 0)]
     public class BottleType : ReceptacleType

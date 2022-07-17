@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Events;
+using ScriptableObjects.Receptacles;
 using UnityEngine;
 
 namespace ScriptableObjects

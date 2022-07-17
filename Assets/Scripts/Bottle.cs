@@ -1,6 +1,7 @@
 using System.Collections;
 using Ingredients;
 using ScriptableObjects;
+using ScriptableObjects.Receptacles;
 using UnityEngine;
 
 public class Bottle : Receptacle
