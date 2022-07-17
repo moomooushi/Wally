@@ -1,4 +1,7 @@
+using System.Collections;
+using Ingredients;
 using ScriptableObjects;
+using ScriptableObjects.Receptacles;
 using UnityEngine;
 
 public class Bottle : Receptacle
@@ -29,14 +32,25 @@ public class Bottle : Receptacle
             _fillCount = bottleType.fillCount;
 
             var rb = this.GetComponent<Rigidbody2D>();
+            
+            
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             for (int i = 0; i < _fillCount; i++)
             {
-                GameObject _ = Instantiate(fluidPrefab, receptacleTransform.position, Quaternion.identity, receptacleTransform);
+                float randomiseX = Random.Range(0f, 0.0002f);
+                Vector3 newPos = new Vector3(receptaclePosition.x - randomiseX,
+                    receptaclePosition.y, receptaclePosition.z);
+                GameObject _ = Instantiate(fluidPrefab, newPos, Quaternion.identity, receptacleTransform);
                 Fluid fluid = _.GetComponent<Fluid>();
                 fluid.fluidType = fluidType;
             }
-            rb.constraints = RigidbodyConstraints2D.None;
+            StartCoroutine(ResetRbConstraint(rb));
         }
+    }
+
+    IEnumerator ResetRbConstraint(Rigidbody2D rb)
+    {
+        yield return new WaitForSeconds(0.5f);
+        rb.constraints = RigidbodyConstraints2D.None;
     }
 }

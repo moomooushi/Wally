@@ -16,6 +16,7 @@ MonoBehaviour:
   ingredientsList:
   - ingredientType: {fileID: 11400000, guid: 080c5f0171153ab4fa08565e48d2e191, type: 2}
     requirement: 5
-    count: 29
-    complete: 1
-  _levelComplete: 1
+    count: 0
+    complete: 0
+  cashReward: 100
+  _levelComplete: 0

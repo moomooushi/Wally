@@ -1,20 +1,14 @@
-using System.Collections;
 using Events;
 using ScriptableObjects;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class Level : MonoBehaviour
 {
-    [SerializeField]
-    private LevelData level;
+    [FormerlySerializedAs("level")] [SerializeField]
+    public LevelData levelData;
     [SerializeField][ReadOnly]
     private bool levelIsComplete;
-    [SerializeField]
-    private float levelCompleteTimeOut = 5;
-    [SerializeField][ReadOnly]
-    private bool runCoroutine = true;
-    [SerializeField] private string sceneToLoad = "LevelCompleteScene";
 
     private void Start()
     {
@@ -33,25 +27,8 @@ public class Level : MonoBehaviour
 
     private void CheckLevelCompleted()
     {
-        levelIsComplete = level.LevelComplete;
-        LoadEndScene();
-    }
-
-    private void LoadEndScene()
-    {
-        if (levelIsComplete && runCoroutine)
-        {
-            runCoroutine = false;
-            StartCoroutine(DelayEndSceneLoad());
-        } 
-    }
-    
-    IEnumerator DelayEndSceneLoad()
-    {
-        yield return new WaitForSeconds(levelCompleteTimeOut);
-        if(sceneToLoad != null) {
-            StopAllCoroutines();
-            SceneManager.LoadScene(sceneToLoad, LoadSceneMode.Additive);
-        }
+        levelIsComplete = levelData.LevelComplete;
+        if(levelIsComplete) 
+            GameEvents.OnShowLevelEndStateEvent?.Invoke();
     }
 }
