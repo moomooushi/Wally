@@ -7,6 +7,8 @@ public abstract class Receptacle : MonoBehaviour
     public ReceptacleType receptacleType;
     [ReadOnly]
     public Transform receptacleTransform;
+    [ReadOnly]
+    public Vector3 receptaclePosition;
     [Space(20)]
     [Header("Sprite Settings")]
     [ReadOnly]
@@ -21,6 +23,7 @@ public abstract class Receptacle : MonoBehaviour
         UpdateColliders();
         AddTransparency();
         receptacleTransform = GetComponent<Transform>();
+        receptaclePosition = receptacleTransform.position;
     }
     public void UpdateColliders()
     {
