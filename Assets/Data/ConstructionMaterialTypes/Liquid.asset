@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c5bec801b7349a29505a27a695777b5, type: 3}
   m_Name: Liquid
   m_EditorClassIdentifier: 
-  name: WetFood
+  name: Liquid
   audioClips: []
