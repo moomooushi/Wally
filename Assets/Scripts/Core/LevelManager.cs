@@ -23,7 +23,12 @@ namespace Core
         public bool RunCoroutine
         {
             get => runCoroutine;
-            private set => runCoroutine = value;
+            private set { runCoroutine = value;
+                if (runCoroutine == false)
+                {
+                    StopAllCoroutines();
+                }
+            }
         }
         
         private void OnEnable()
@@ -66,7 +71,6 @@ namespace Core
         IEnumerator DelayEndStateLoad()
         {
             yield return new WaitForSeconds(levelCompleteTimeOut);
-            StopAllCoroutines();
             if(levelCompleteUI != null && RunCoroutine == false)
             {
                 RunCoroutine = true;
@@ -76,7 +80,6 @@ namespace Core
 
         private void LoadNextScene()
         {
-            StopAllCoroutines();
             if (currentLevel != null)
                 SceneManager.LoadScene(nextLevel);
             else
@@ -85,6 +88,7 @@ namespace Core
 
         public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
+            StopAllCoroutines();
             currentSceneBuildID = SceneManager.GetActiveScene().buildIndex;
             
             _currentLevelInstance = GameObject.Find("LevelData").GetComponent<Level>();
