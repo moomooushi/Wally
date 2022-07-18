@@ -21,14 +21,16 @@ namespace Audio
             AddConstructionType();
         }
 
-        private void OnCollisionEnter(Collision collision)
+        private void OnCollisionEnter2D(Collision2D col)
         {
-            GameEvents.OnAudioCollisionEvent?.Invoke(GetRandomClip(constructionMaterial.audioClips));
+            AudioClip clip = GetRandomClip(constructionMaterial.audioClips);
+            GameEvents.OnAudioCollisionEvent?.Invoke(clip);
         }
 
         AudioClip GetRandomClip(List<AudioClip> clips)
         {
             AudioClip clip = clips[Random.Range(0, clips.Count)];
+            Debug.Log("We got a random clip to play" + clip);
             return clip;
         }
 

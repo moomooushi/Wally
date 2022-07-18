@@ -1,4 +1,3 @@
-using System;
 using Events;
 using ScriptableObjects;
 using UnityEngine;
@@ -10,7 +9,6 @@ namespace Core
         public static PlayerManager Instance = null;
         [SerializeField]
         private PlayerSessionData playerData;
-
         public float playerCash;
 
         private void OnEnable()
