@@ -33,7 +33,7 @@ namespace Core
         
         private void UpdatePlayerCash(float value)
         {
-            playerCash += value;
+            playerCash = value;
         }
     }
 }
