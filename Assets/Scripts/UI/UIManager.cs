@@ -18,11 +18,11 @@ namespace UI
 
         private void OnEnable()
         {
-            GameEvents.OnUpdateWalletEvent += UpdateCash;
+            GameEvents.OnWalletUpdatedEvent += UpdateCash;
         }
         private void OnDisable()
         {
-            GameEvents.OnUpdateWalletEvent -= UpdateCash;
+            GameEvents.OnWalletUpdatedEvent -= UpdateCash;
         }
         private void UpdateCash(float value)
         {
@@ -32,7 +32,8 @@ namespace UI
             currentCashText.text = value.ToString(CultureInfo.CurrentCulture);
             Debug.Log("we are updating the currentCash in the register");
         }
-
+        
+        // Todo: need to complete this method so that when a new scene is loaded we reassign the currentCashText
         void AssignCurrentCashText()
         {
             currentCashText.GetComponent<TMP_Text>();
