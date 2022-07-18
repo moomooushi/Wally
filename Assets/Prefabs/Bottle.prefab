@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4434565234944124161}
   - component: {fileID: 382778020130831217}
   - component: {fileID: 382778020130831222}
+  - component: {fileID: 8777996828959077802}
   m_Layer: 0
   m_Name: Bottle
   m_TagString: Untagged
@@ -47,9 +48,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 423ac623b572a7a43947e4adaa8bb926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bottleType: {fileID: 0}
-  fluid: {fileID: 0}
-  fillCount: 50
+  receptacleType: {fileID: 0}
+  receptacleTransform: {fileID: 0}
+  receptaclePosition: {x: 0, y: 0, z: 0}
+  spriteRenderer: {fileID: 0}
+  glassTransparency: 0.9
+  fluidType: {fileID: 0}
+  fluidPrefab: {fileID: 0}
 --- !u!212 &4434565234944124161
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -149,3 +154,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3154089, y: 0.8934193}
   m_EdgeRadius: 0
+--- !u!114 &8777996828959077802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382778020130831220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c056de920231439eb3b7b16934da7ea2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  constructionMaterial: {fileID: 0}

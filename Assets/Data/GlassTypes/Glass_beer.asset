@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Beer Glass
   sprite: {fileID: 21300000, guid: 84b511ce30b54b44383d1d26133d5fea, type: 3}
+  ingredientType: {fileID: 0}
+  constructionMaterial: {fileID: 11400000, guid: ff18cac80dd8f8a4e943e07107353ffc, type: 2}

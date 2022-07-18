@@ -13,4 +13,9 @@ MonoBehaviour:
   m_Name: Glass
   m_EditorClassIdentifier: 
   name: Glass
-  audioClips: []
+  audioClips:
+  - {fileID: 8300000, guid: 74156f5fe7277fc40b3bb0c7c84636ba, type: 3}
+  - {fileID: 8300000, guid: 971ee6d8d66766943bda667d1c557733, type: 3}
+  - {fileID: 8300000, guid: 168e1d71103c41546b88d187e03e373a, type: 3}
+  - {fileID: 8300000, guid: 50680c6b9c61caf4fb19dbc9722eda89, type: 3}
+  - {fileID: 8300000, guid: 6656faab1d57e224c87ce1fac92c26c4, type: 3}
