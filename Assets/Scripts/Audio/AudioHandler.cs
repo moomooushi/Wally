@@ -34,9 +34,10 @@ namespace Audio
 
         void AddConstructionType()
         {
-            if (constructionMaterial == null)
+            if (constructionMaterial != null)
             {
-                constructionMaterial = GetComponent<Receptacle>().receptacleType.constructionMaterial;
+                if(GetComponent<Receptacle>())
+                    constructionMaterial = GetComponent<Receptacle>().receptacleType.constructionMaterial;
             }
         }
 }
