@@ -13,4 +13,10 @@ MonoBehaviour:
   m_Name: Wood
   m_EditorClassIdentifier: 
   name: Wood
-  audioClips: []
+  audioClips:
+  - {fileID: 8300000, guid: 0ba2579e81a390e43b75fce21cca8852, type: 3}
+  - {fileID: 8300000, guid: a5ecbb76d1fb5544ba2114290c16eeb0, type: 3}
+  - {fileID: 8300000, guid: 8535a1f6962901348bfd501496b44a02, type: 3}
+  - {fileID: 8300000, guid: edb21fefa65d3b546ab64b9d82194b8b, type: 3}
+  - {fileID: 8300000, guid: 657842a72e2a4ff4d84e0ad203db28bc, type: 3}
+  - {fileID: 8300000, guid: 6dbb13c6f5d4d6a4c95af7e45a61d191, type: 3}

@@ -1,5 +1,4 @@
-﻿using ScriptableObjects;
-using ScriptableObjects.Receptacles;
+﻿using ScriptableObjects.Receptacles;
 using UnityEngine;
 
 public abstract class Receptacle : MonoBehaviour
