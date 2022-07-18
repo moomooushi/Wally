@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Tall Glass
   sprite: {fileID: 21300000, guid: f879292da5e978848945a6fa0bd57041, type: 3}
+  ingredientType: {fileID: 0}
+  constructionMaterial: {fileID: 11400000, guid: ff18cac80dd8f8a4e943e07107353ffc, type: 2}

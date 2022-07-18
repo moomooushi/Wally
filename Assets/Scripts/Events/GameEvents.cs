@@ -1,4 +1,5 @@
 ﻿using ScriptableObjects;
+using UnityEngine;
 
 namespace Events
 {
@@ -12,6 +13,7 @@ namespace Events
         public delegate void UpdateWallet(float valueToAdd);
         public delegate void WalletUpdated(float value);
         public delegate void NextScene();
+        public delegate void AudioCollision(AudioClip clip);
         
         public static FluidInGlass OnIngredientEnterGlassEvent;
         public static FluidExitGlass OnIngredientExitGlassEvent;
@@ -21,5 +23,6 @@ namespace Events
         public static WalletUpdated OnWalletUpdatedEvent;
         public static LoadEndState OnShowLevelEndStateEvent;
         public static NextScene OnLoadNextSceneEvent;
+        public static AudioCollision OnAudioCollisionEvent;
     }
 }
