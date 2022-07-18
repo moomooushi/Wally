@@ -13,7 +13,7 @@ namespace UI
 
         private void Start()
         {
-            currentCashText.text = PlayerManager.Instance.playerCash.ToString();
+            currentCashText.text = PlayerManager.Instance.playerCash.ToString(CultureInfo.CurrentCulture);
         }
 
         private void OnEnable()
@@ -31,6 +31,11 @@ namespace UI
             
             currentCashText.text = value.ToString(CultureInfo.CurrentCulture);
             Debug.Log("we are updating the currentCash in the register");
+        }
+
+        void AssignCurrentCashText()
+        {
+            currentCashText.GetComponent<TMP_Text>();
         }
 
       
