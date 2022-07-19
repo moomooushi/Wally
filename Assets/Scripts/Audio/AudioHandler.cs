@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using Events;
 using ScriptableObjects.MaterialInteractions;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace Audio
 {
@@ -10,6 +10,8 @@ namespace Audio
     {
         [SerializeField] private ConstructionMaterialType constructionMaterial;
         List<AudioClip> _clips;
+        [SerializeField] private float clipPlayWaitTime = 0.01f;
+        private bool _isAvailable = true;
 
         private void Start()
         {
@@ -19,6 +21,10 @@ namespace Audio
 
         private void OnCollisionEnter2D(Collision2D col)
         {
+            if (_isAvailable == false)
+                return;
+
+            StartCoroutine(StartCooldown());
             AudioClip randomClip = GetRandomClip(_clips);
             GameEvents.OnAudioCollisionEvent?.Invoke(randomClip);
         }
@@ -36,6 +42,13 @@ namespace Audio
             {
                 constructionMaterial = GetComponent<Receptacle>().receptacleType.constructionMaterial;
             }
+        }
+
+        IEnumerator StartCooldown()
+        {
+            _isAvailable = false;
+            yield return new WaitForSeconds(clipPlayWaitTime);
+            _isAvailable = true;
         }
 }
 }

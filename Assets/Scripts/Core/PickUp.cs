@@ -12,10 +12,16 @@ public class PickUp: MonoBehaviour
     private float moveForce = 250f;
 
     private Vector3 _mousePosition;
-    
+    private Camera _camera;
+
+    private void Awake()
+    {
+        _camera = Camera.main;
+    }
+
     private void Update()
     {
-        _mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (_camera != null) _mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
         holdParent.transform.position = _mousePosition;
 
         if (Input.GetMouseButtonDown(0))
@@ -72,7 +78,6 @@ public class PickUp: MonoBehaviour
         if (pickedObject.GetComponent<Rigidbody2D>() && !pickedObject.CompareTag("Fluid"))
         {
             Rigidbody2D objectRigidBody = pickedObject.GetComponent<Rigidbody2D>();
-//            objectRigidBody.constraints = RigidbodyConstraints2D.FreezePosition;
             objectRigidBody.transform.parent = holdParent;
             heldObject = pickedObject;
         }
