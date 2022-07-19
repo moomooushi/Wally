@@ -1,8 +1,8 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 using Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 namespace ScriptableObjects
@@ -13,8 +13,8 @@ namespace ScriptableObjects
         public new string name;
         public List<Entry> ingredientsList = new();
         public float cashReward;
-        [SerializeField]
-        private bool _rewardGiven = false;
+        [FormerlySerializedAs("_rewardGiven")] [SerializeField]
+        private bool rewardGiven = false;
         [FormerlySerializedAs("_levelComplete")] [SerializeField]
         private bool levelComplete;
         public bool LevelComplete
@@ -26,9 +26,9 @@ namespace ScriptableObjects
                 if (levelComplete == true)
                 {
 
-                    if (_rewardGiven == false)
+                    if (rewardGiven == false)
                     {
-                        _rewardGiven = true;
+                        rewardGiven = true;
                         GameEvents.OnUpdateWalletEvent?.Invoke(cashReward);
                     } 
                         
@@ -36,28 +36,23 @@ namespace ScriptableObjects
                 }
             }
         }
-        
-        private void Awake()
-        {
-            ResetValues();
-        }
-        
+
         private void OnEnable()
         {
             GameEvents.OnIngredientEnterGlassEvent += IncreaseCount;
             GameEvents.OnIngredientExitGlassEvent += ReduceCount;
             GameEvents.OnIngredientUpdatedEvent += SetLevelCompleted;
+            SceneManager.sceneLoaded += ResetValues;
+            ResetValues();
         }
-        
+
+       
         private void OnDisable()
         {
             GameEvents.OnIngredientEnterGlassEvent -= IncreaseCount; 
             GameEvents.OnIngredientExitGlassEvent -= ReduceCount;
             GameEvents.OnIngredientUpdatedEvent -= SetLevelCompleted;
-        }
-
-        private void Reset()
-        {
+            SceneManager.sceneLoaded -= ResetValues;
             ResetValues();
         }
 
@@ -89,12 +84,17 @@ namespace ScriptableObjects
             }
 
             LevelComplete = false;
-            _rewardGiven = false;
+            rewardGiven = false;
+        }
+        
+        private void ResetValues(Scene arg0, LoadSceneMode arg1)
+        {
+            ResetValues();
         }
 
         private void SetLevelCompleted()
         { 
-            var testComplete = ingredientsList.All(s => s.complete);
+            bool testComplete = ingredientsList.All(s => s.complete);
             LevelComplete = testComplete;
             Debug.Log("All level Reqs complete: " + testComplete);
 

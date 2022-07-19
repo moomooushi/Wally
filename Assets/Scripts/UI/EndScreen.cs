@@ -1,5 +1,6 @@
 using System.ComponentModel;
 using Core;
+using Events;
 using ScriptableObjects;
 using TMPro;
 using UnityEngine;
@@ -55,11 +56,17 @@ public class EndScreen : MonoBehaviour
         if (!LevelManager.Instance.nextLevel.Contains("Level "))
         {
             buttonText.text = fallBackButtonText;
+            _button.onClick.AddListener(SessionEnd);
         }
         else
         {
             buttonText.text = incrementLevel;
         }
+    }
+
+    private void SessionEnd()
+    {
+        GameEvents.OnSessionEndedEvent?.Invoke();
     }
 
     private void UpdateDescription(float valueToAdd)

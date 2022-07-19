@@ -28,11 +28,14 @@ namespace Core
         private void OnEnable()
         {
             GameEvents.OnWalletUpdatedEvent += UpdatePlayerCash;
+            GameEvents.OnSessionEndedEvent += RenewSessionData;
         }
-        
+
+       
         private void OnDisable()
         {
             GameEvents.OnWalletUpdatedEvent -= UpdatePlayerCash;
+            GameEvents.OnSessionEndedEvent -= RenewSessionData;
         }
         
         private void UpdatePlayerCash(float value)
@@ -40,5 +43,14 @@ namespace Core
             playerCash = 0;
             playerCash = value;
         }
+        
+        private void RenewSessionData()
+        {
+            Debug.Log("Trying to destroy playerdata");
+            DestroyImmediate(playerData);
+            playerData = ScriptableObject.CreateInstance<PlayerSessionData>();
+            UpdatePlayerCash(0);
+        }
+
     }
 }

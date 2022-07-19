@@ -39,5 +39,6 @@ namespace ScriptableObjects
         {
             inventory.Add(bottleType);
         }
+        
     }
 }

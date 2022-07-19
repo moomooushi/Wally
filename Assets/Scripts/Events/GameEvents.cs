@@ -15,6 +15,8 @@ namespace Events
         public delegate void NextScene();
         public delegate void AudioCollision(AudioClip clip);
         
+        public delegate void SessionEnd();
+        
         public static FluidInGlass OnIngredientEnterGlassEvent;
         public static FluidExitGlass OnIngredientExitGlassEvent;
         public static DetermineLevelCompletion OnIngredientUpdatedEvent;
@@ -24,5 +26,6 @@ namespace Events
         public static LoadEndState OnShowLevelEndStateEvent;
         public static NextScene OnLoadNextSceneEvent;
         public static AudioCollision OnAudioCollisionEvent;
+        public static SessionEnd OnSessionEndedEvent;
     }
 }
