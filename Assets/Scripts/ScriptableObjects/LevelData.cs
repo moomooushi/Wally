@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 using Events;
@@ -35,6 +36,12 @@ namespace ScriptableObjects
                 }
             }
         }
+        
+        private void Awake()
+        {
+            ResetValues();
+        }
+        
         private void OnEnable()
         {
             GameEvents.OnIngredientEnterGlassEvent += IncreaseCount;
@@ -47,7 +54,6 @@ namespace ScriptableObjects
             GameEvents.OnIngredientEnterGlassEvent -= IncreaseCount; 
             GameEvents.OnIngredientExitGlassEvent -= ReduceCount;
             GameEvents.OnIngredientUpdatedEvent -= SetLevelCompleted;
-            ResetValues();
         }
 
         private void Reset()
@@ -88,8 +94,10 @@ namespace ScriptableObjects
 
         private void SetLevelCompleted()
         { 
-            Debug.Log("We tried to check if the level was complete");
-            LevelComplete = ingredientsList.All(s => s.complete);
+            var testComplete = ingredientsList.All(s => s.complete);
+            LevelComplete = testComplete;
+            Debug.Log("All level Reqs complete: " + testComplete);
+
         }
        
     }
