@@ -34,7 +34,7 @@ public class Bottle : Receptacle
             var rb = this.GetComponent<Rigidbody2D>();
             
             
-            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
             for (int i = 0; i < _fillCount; i++)
             {
                 float randomiseX = Random.Range(0f, 0.0002f);
