@@ -18,6 +18,9 @@ namespace Audio
             {
                 Instance = this;
                 DontDestroyOnLoad(this.gameObject);
+            } else if (Instance != null)
+            {
+                Destroy(this.gameObject);
             }
 
             GetAudioSource();

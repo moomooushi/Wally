@@ -2,20 +2,21 @@
 using Events;
 using ScriptableObjects.Receptacles;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace ScriptableObjects
 {
     [CreateAssetMenu(fileName = "PlayerSessionData_", menuName = "Session Data/New Player Session Data", order = 0)]
     public class PlayerSessionData : ScriptableObject
     {
-        [SerializeField][ReadOnly]
-        private float _currentCash;
+        [FormerlySerializedAs("_currentCash")] [SerializeField][ReadOnly]
+        private float currentCash;
         public List<BottleType> inventory = new();
 
         public float CurrentCash
         { 
-            get => _currentCash;
-            private set => _currentCash = value;
+            get => currentCash;
+            private set => currentCash = value;
         }
 
         private void OnEnable()

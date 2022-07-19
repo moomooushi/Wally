@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 using Core;
 using Events;
 using TMPro;
@@ -13,7 +14,15 @@ namespace UI
 
         private void Start()
         {
-            currentCashText.text = PlayerManager.Instance.playerCash.ToString(CultureInfo.CurrentCulture);
+            if (LevelManager.Instance.currentLevel.Contains("Level"))
+            {
+                AssignCurrentCashText();
+                currentCashText.text = PlayerManager.Instance.playerCash.ToString(CultureInfo.CurrentCulture);
+            }
+            else
+            {
+                currentCashText = null;
+            }
         }
 
         private void OnEnable()
@@ -36,7 +45,7 @@ namespace UI
         // Todo: need to complete this method so that when a new scene is loaded we reassign the currentCashText
         void AssignCurrentCashText()
         {
-            currentCashText.GetComponent<TMP_Text>();
+            currentCashText = GameObject.Find("CurrentCashText").GetComponent<TMP_Text>();
         }
 
       

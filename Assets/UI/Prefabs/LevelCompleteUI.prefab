@@ -204,6 +204,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad439b15a043874d8ed601e90da2597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  titleText: {fileID: 0}
+  descriptionText: {fileID: 0}
+  buttonText: {fileID: 0}
+  _button: {fileID: 0}
+  incrementLevel: Next Level
+  fallBackButtonText: Back to Main Menu
 --- !u!1001 &7339316147372067304
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -49,5 +49,7 @@ MonoBehaviour:
   nextLevel: 
   currentSceneBuildID: 0
   currentLevelData: {fileID: 0}
+  levelCompleteTimeOut: 2
   levelCompleteUI: {fileID: 6766251061083799029, guid: d80e9da2cf82a7345b9d99ecb9b206b3, type: 3}
   runCoroutine: 1
+  fallBackScene: MainMenu

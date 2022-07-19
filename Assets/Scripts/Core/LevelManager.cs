@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Linq;
 using Events;
 using ScriptableObjects;
 using UnityEngine;
@@ -13,22 +14,15 @@ namespace Core
         public string previousLevel, currentLevel, nextLevel;
         public int currentSceneBuildID;
         private Level _currentLevelInstance;
-        [SerializeField]
-        private LevelData currentLevelData;
-        private float levelCompleteTimeOut = 5;
+        [SerializeField] private LevelData currentLevelData;
+        [SerializeField] private float levelCompleteTimeOut = 5;
         public GameObject levelCompleteUI;
-        [SerializeField][ReadOnly]
-        private bool runCoroutine;
-
+        [SerializeField][ReadOnly] private bool runCoroutine;
+        [SerializeField] private string fallBackScene = "MainMenu";
         public bool RunCoroutine
         {
             get => runCoroutine;
-            private set { runCoroutine = value;
-                if (runCoroutine == false)
-                {
-                    StopAllCoroutines();
-                }
-            }
+            private set => runCoroutine = value;
         }
         
         private void OnEnable()
@@ -51,6 +45,9 @@ namespace Core
             {
                 Instance = this;
                 DontDestroyOnLoad(this.gameObject);
+            } else if (Instance != null)
+            {
+                Destroy(this.gameObject);
             }
 
             RunCoroutine = true;
@@ -64,18 +61,22 @@ namespace Core
         
         private void LoadEndState()
         {
+            Debug.Log("SHOWING END STATE");
+            if (levelCompleteUI == null)
+                return;
+            
             RunCoroutine = false;
-            StartCoroutine(DelayEndStateLoad());
+            
+            if(RunCoroutine == false)
+                StartCoroutine(DelayEndStateLoad());
         }
         
         IEnumerator DelayEndStateLoad()
         {
             yield return new WaitForSeconds(levelCompleteTimeOut);
-            if(levelCompleteUI != null && RunCoroutine == false)
-            {
-                RunCoroutine = true;
-                Instantiate(levelCompleteUI);
-            }
+            Instantiate(levelCompleteUI);
+            StopAllCoroutines();
+            RunCoroutine = true;
         }
 
         private void LoadNextScene()
@@ -88,15 +89,19 @@ namespace Core
 
         public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
-            StopAllCoroutines();
-            currentSceneBuildID = SceneManager.GetActiveScene().buildIndex;
-            
-            _currentLevelInstance = GameObject.Find("LevelData").GetComponent<Level>();
+            currentSceneBuildID = scene.buildIndex;
+            if (GameObject.Find("LevelData")) {
+                _currentLevelInstance = GameObject.Find("LevelData").GetComponent<Level>();
+            }
             currentLevelData = _currentLevelInstance.levelData;
             currentLevel = currentLevelData.name;
             
             _ = currentLevel == "Level 1" ? previousLevel = null : previousLevel = UpdateLevelString(currentLevel, -1);
-            nextLevel = UpdateLevelString(currentLevel, 1);
+            
+            string nextLevelTemp = UpdateLevelString(currentLevel, 1);
+            string[] nextSceneName = UnityEngine.SceneManagement.SceneUtility.GetScenePathByBuildIndex(currentSceneBuildID + 1).Split("/");
+            nextLevel = nextLevelTemp == nextSceneName.Last().Replace(".unity", "") ? nextLevelTemp : nextLevel = fallBackScene;
+            Debug.Log(nextLevelTemp + " " + nextSceneName.Last());
         }
         
     }

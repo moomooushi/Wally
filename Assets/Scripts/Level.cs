@@ -8,16 +8,18 @@ public class Level : MonoBehaviour
     [FormerlySerializedAs("level")] [SerializeField]
     public LevelData levelData;
     [SerializeField][ReadOnly]
-    private bool levelIsComplete;
+    private bool levelIsComplete, levelCompleteEventSent;
 
     private void Start()
     {
         levelIsComplete = false;
+        levelCompleteEventSent = false;
     }
 
     private void OnEnable()
     {
-        GameEvents.OnLevelCompletedEvent += CheckLevelCompleted;
+        if(!levelCompleteEventSent)
+            GameEvents.OnLevelCompletedEvent += CheckLevelCompleted;
     }
     
     private void OnDisable()
@@ -28,7 +30,10 @@ public class Level : MonoBehaviour
     private void CheckLevelCompleted()
     {
         levelIsComplete = levelData.LevelComplete;
-        if(levelIsComplete) 
+        if(levelIsComplete && !levelCompleteEventSent)
+        {
             GameEvents.OnShowLevelEndStateEvent?.Invoke();
+            levelCompleteEventSent = true;
+        }
     }
 }

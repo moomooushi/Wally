@@ -11,6 +11,20 @@ namespace Core
         private PlayerSessionData playerData;
         public float playerCash;
 
+        private void Awake()
+        {
+            if (Instance == null)
+            {
+                playerData = ScriptableObject.CreateInstance<PlayerSessionData>();
+                Instance = this;
+                DontDestroyOnLoad(this.gameObject);
+            }
+            else if (Instance != null)
+            {
+                Destroy(this.gameObject);
+            }
+        }
+        
         private void OnEnable()
         {
             GameEvents.OnWalletUpdatedEvent += UpdatePlayerCash;
@@ -20,19 +34,10 @@ namespace Core
         {
             GameEvents.OnWalletUpdatedEvent -= UpdatePlayerCash;
         }
-
-        private void Awake()
-        {
-            if (Instance == null)
-            {
-                Instance = this;
-                DontDestroyOnLoad(this.gameObject);
-            }
-            playerData = ScriptableObject.CreateInstance<PlayerSessionData>();
-        }
         
         private void UpdatePlayerCash(float value)
         {
+            playerCash = 0;
             playerCash = value;
         }
     }
