@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 34528186}
   - component: {fileID: 34528188}
   - component: {fileID: 34528187}
+  - component: {fileID: 34528189}
   m_Layer: 0
   m_Name: Shelf
   m_TagString: Untagged
@@ -234,6 +235,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &34528189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34528185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c056de920231439eb3b7b16934da7ea2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  constructionMaterial: {fileID: 11400000, guid: 40207d1a805c86d48953430fe0a42fb5, type: 2}
 --- !u!1 &138968934
 GameObject:
   m_ObjectHideFlags: 0

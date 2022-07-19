@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Events;
 using ScriptableObjects.MaterialInteractions;
 using UnityEngine;
@@ -10,36 +9,32 @@ namespace Audio
     public class AudioHandler : MonoBehaviour
     {
         [SerializeField] private ConstructionMaterialType constructionMaterial;
+        List<AudioClip> _clips;
 
-        private void OnValidate()
+        private void Start()
         {
             AddConstructionType();
-        }
-
-        private void Awake()
-        {
-            AddConstructionType();
+            _clips = this.constructionMaterial.audioClips;
         }
 
         private void OnCollisionEnter2D(Collision2D col)
         {
-            AudioClip clip = GetRandomClip(constructionMaterial.audioClips);
-            GameEvents.OnAudioCollisionEvent?.Invoke(clip);
+            AudioClip randomClip = GetRandomClip(_clips);
+            GameEvents.OnAudioCollisionEvent?.Invoke(randomClip);
         }
 
-        AudioClip GetRandomClip(List<AudioClip> clips)
+        AudioClip GetRandomClip(List<AudioClip> listOfClips)
         {
-            AudioClip clip = clips[Random.Range(0, clips.Count)];
-            Debug.Log("We got a random clip to play" + clip);
+            AudioClip clip = listOfClips[Random.Range(0, listOfClips.Count)];
+            Debug.Log("We got a random clip to play " + clip);
             return clip;
         }
 
         void AddConstructionType()
         {
-            if (constructionMaterial != null)
+            if (constructionMaterial == null && GetComponent<Receptacle>())
             {
-                if(GetComponent<Receptacle>())
-                    constructionMaterial = GetComponent<Receptacle>().receptacleType.constructionMaterial;
+                constructionMaterial = GetComponent<Receptacle>().receptacleType.constructionMaterial;
             }
         }
 }
