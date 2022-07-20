@@ -29,10 +29,10 @@ namespace Ingredients
             if (other.GetComponent<Receptacle>())
             {
                 this.transform.parent = other.transform;
-            
-                if(other.GetComponent<Glass>())
-                    GameEvents.OnIngredientEnterGlassEvent?.Invoke(this.fluidType);
             }
+            
+            if(other.GetComponent<Glass>() && !other.GetComponent<Bottle>())
+                GameEvents.OnIngredientEnterGlassEvent?.Invoke(this.fluidType);
         }
 
         ///<summary>
@@ -47,9 +47,10 @@ namespace Ingredients
                 {
                     this.transform.parent = _fluidsParent.transform;
                 }
-                if(other.GetComponent<Glass>())
-                    GameEvents.OnIngredientExitGlassEvent?.Invoke(this.fluidType);
             }
+            
+            if(other.GetComponent<Glass>() && !other.GetComponent<Bottle>())
+                GameEvents.OnIngredientExitGlassEvent?.Invoke(this.fluidType);
         }
     }
 }

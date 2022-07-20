@@ -153,7 +153,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5907842282513624094, guid: 47d853454ff603447a8f958a7bb52dd6, type: 3}
       propertyPath: m_Size.y
-      value: 0.28038993
+      value: 0.28180566
       objectReference: {fileID: 0}
     - target: {fileID: 5907842282513624094, guid: 47d853454ff603447a8f958a7bb52dd6, type: 3}
       propertyPath: m_Offset.x
@@ -161,7 +161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5907842282513624094, guid: 47d853454ff603447a8f958a7bb52dd6, type: 3}
       propertyPath: m_Offset.y
-      value: -0.12466766
+      value: -0.12537552
       objectReference: {fileID: 0}
     - target: {fileID: 6511282111921027447, guid: 47d853454ff603447a8f958a7bb52dd6, type: 3}
       propertyPath: receptacleType

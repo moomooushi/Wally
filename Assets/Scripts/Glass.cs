@@ -1,1 +1,4 @@
-public class Glass : Receptacle { }
+public class Glass : Receptacle
+{
+    
+}
