@@ -938,6 +938,18 @@ PrefabInstance:
       propertyPath: m_UpscaleRT
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2676324404616276850, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
+      propertyPath: m_CropFrameX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676324404616276850, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
+      propertyPath: m_CropFrameY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676324404616276850, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
+      propertyPath: m_StretchFill
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2676324404616276851, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
       propertyPath: m_Name
       value: Pixel Perfect Camera
