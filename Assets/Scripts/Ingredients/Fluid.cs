@@ -6,7 +6,6 @@ namespace Ingredients
 {
     public class Fluid : Ingredient
     {
-    
         public FluidType fluidType;
         private GameObject _fluidsParent;
         private void Start()

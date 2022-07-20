@@ -29,7 +29,6 @@ public class Entry
 
     public void ReduceCount()
     {
-
         Count--;
     }
 

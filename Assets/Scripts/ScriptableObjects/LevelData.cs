@@ -43,8 +43,7 @@ namespace ScriptableObjects
             SceneManager.sceneLoaded += ResetValues;
             ResetValues();
         }
-
-       
+        
         private void OnDisable()
         {
             GameEvents.OnIngredientUpdatedEvent -= SetLevelCompleted;
@@ -56,7 +55,7 @@ namespace ScriptableObjects
         {
             var i = ingredientsList.FirstOrDefault(s => s.ingredientType == ingredientType);
             
-            if(i != null )
+            if(i != null)
                 i.IncreaseCount();
             
             GameEvents.OnIngredientUpdatedEvent?.Invoke();
