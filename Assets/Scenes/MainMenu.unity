@@ -903,6 +903,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2676324404616276845, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
+      propertyPath: m_ForceIntoRT
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676324404616276845, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
       propertyPath: orthographic size
       value: 2.8
       objectReference: {fileID: 0}
@@ -1146,7 +1150,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -37.175}
+  m_AnchoredPosition: {x: 0, y: -37.17505}
   m_SizeDelta: {x: -375.9576, y: -335.1002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1865281444
