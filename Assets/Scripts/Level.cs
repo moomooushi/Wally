@@ -20,11 +20,16 @@ public class Level : MonoBehaviour
     {
         if(!levelCompleteEventSent)
             GameEvents.OnLevelCompletedEvent += CheckLevelCompleted;
+        
+        GameEvents.OnIngredientEnterGlassEvent += levelData.IncreaseCount;
+        GameEvents.OnIngredientExitGlassEvent += levelData.ReduceCount;
     }
     
     private void OnDisable()
     {
         GameEvents.OnLevelCompletedEvent -= CheckLevelCompleted;
+        GameEvents.OnIngredientEnterGlassEvent -= levelData.IncreaseCount; 
+        GameEvents.OnIngredientExitGlassEvent -= levelData.ReduceCount;
     }
 
     private void CheckLevelCompleted()

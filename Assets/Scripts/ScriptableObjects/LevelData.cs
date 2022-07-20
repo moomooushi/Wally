@@ -39,8 +39,6 @@ namespace ScriptableObjects
 
         private void OnEnable()
         {
-            GameEvents.OnIngredientEnterGlassEvent += IncreaseCount;
-            GameEvents.OnIngredientExitGlassEvent += ReduceCount;
             GameEvents.OnIngredientUpdatedEvent += SetLevelCompleted;
             SceneManager.sceneLoaded += ResetValues;
             ResetValues();
@@ -49,14 +47,12 @@ namespace ScriptableObjects
        
         private void OnDisable()
         {
-            GameEvents.OnIngredientEnterGlassEvent -= IncreaseCount; 
-            GameEvents.OnIngredientExitGlassEvent -= ReduceCount;
             GameEvents.OnIngredientUpdatedEvent -= SetLevelCompleted;
             SceneManager.sceneLoaded -= ResetValues;
             ResetValues();
         }
 
-        private void IncreaseCount(IngredientType ingredientType)
+        public void IncreaseCount(IngredientType ingredientType)
         {
             var i = ingredientsList.FirstOrDefault(s => s.ingredientType == ingredientType);
             
@@ -66,7 +62,7 @@ namespace ScriptableObjects
             GameEvents.OnIngredientUpdatedEvent?.Invoke();
         }
         
-        private void ReduceCount(IngredientType ingredientType)
+        public void ReduceCount(IngredientType ingredientType)
         {
             var i = ingredientsList.FirstOrDefault(s => s.ingredientType == ingredientType);
            
@@ -97,7 +93,6 @@ namespace ScriptableObjects
             bool testComplete = ingredientsList.All(s => s.complete);
             LevelComplete = testComplete;
             Debug.Log("All level Reqs complete: " + testComplete);
-
         }
        
     }
