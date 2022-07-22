@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Ingredients;
 using ScriptableObjects.Receptacles;
 using UnityEngine;
 
@@ -56,6 +56,14 @@ public abstract class Receptacle : MonoBehaviour
         Color glassSprite = sr.color;
         glassSprite.a = glassTransparency;
         sr.color = glassSprite;
+    }
+    
+    protected virtual void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.GetComponent<Ingredient>())
+        {
+            other.transform.parent = this.transform;
+        }
     }
 
 }

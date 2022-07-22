@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Events;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 namespace ScriptableObjects
 {
@@ -13,9 +12,9 @@ namespace ScriptableObjects
         public new string name;
         public List<Entry> ingredientsList = new();
         public float cashReward;
-        [FormerlySerializedAs("_rewardGiven")] [SerializeField]
+        [SerializeField]
         private bool rewardGiven = false;
-        [FormerlySerializedAs("_levelComplete")] [SerializeField]
+        [SerializeField]
         private bool levelComplete;
         public bool LevelComplete
         {
