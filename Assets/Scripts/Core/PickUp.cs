@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PickUp: MonoBehaviour
 {
@@ -7,8 +6,10 @@ public class PickUp: MonoBehaviour
     private float rotationSpeed = 1;
     [SerializeField]
     private GameObject heldObject;
+
     [SerializeField]
-    private Transform holdParent;
+//    private Transform holdParent;
+    private Rigidbody2D holdParent;
     [SerializeField]
     private float moveForce = 250f;
 
@@ -18,12 +19,13 @@ public class PickUp: MonoBehaviour
     private void Awake()
     {
         _camera = Camera.main;
+        holdParent  = GetComponentInChildren<Rigidbody2D>();
     }
     
     private void Update()
     {
         if (_camera != null) _mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
-        holdParent.transform.position = _mousePosition;
+        holdParent.position = _mousePosition;
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -64,9 +66,9 @@ public class PickUp: MonoBehaviour
 
     private void MoveObject()
     {
-        if (Vector2.Distance(heldObject.transform.position, holdParent.position) > 0.1f)
+        if (Vector2.Distance(heldObject.GetComponent<Rigidbody2D>().position, holdParent.position) > 0.1f)
         {
-            Vector2 moveDirection = holdParent.position - heldObject.transform.position;
+            Vector2 moveDirection = holdParent.position - heldObject.GetComponent<Rigidbody2D>().position;
             heldObject.GetComponent<Rigidbody2D>().AddForce(moveDirection * moveForce);
         }
     }
@@ -82,7 +84,7 @@ public class PickUp: MonoBehaviour
         if (pickedObject.GetComponent<Rigidbody2D>() && !pickedObject.CompareTag("Fluid"))
         {
             Rigidbody2D objectRigidBody = pickedObject.GetComponent<Rigidbody2D>();
-            objectRigidBody.transform.parent = holdParent;
+            objectRigidBody.transform.parent = holdParent.transform;
             heldObject = pickedObject;
         }
     }
