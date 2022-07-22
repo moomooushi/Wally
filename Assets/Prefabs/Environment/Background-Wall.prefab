@@ -78,7 +78,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 11.78, y: 6.35}
+  m_Size: {x: 12, y: 7}
   m_AdaptiveModeThreshold: 0.434
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

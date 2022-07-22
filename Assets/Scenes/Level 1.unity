@@ -1072,14 +1072,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2676324404616276845, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
-      propertyPath: m_HDR
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676324404616276845, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
-      propertyPath: m_AllowMSAA
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2676324404616276851, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
       propertyPath: m_Name
       value: Pixel Perfect Camera
@@ -2809,6 +2801,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3425677751056991338, guid: 0dea95c58f2c5114085c728138eba955, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7424
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425677751056991338, guid: 0dea95c58f2c5114085c728138eba955, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -2818,7 +2814,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3425677751056991338, guid: 0dea95c58f2c5114085c728138eba955, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.05564603
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3425677751056991338, guid: 0dea95c58f2c5114085c728138eba955, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2914,6 +2910,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 945497207}
     m_Modifications:
+    - target: {fileID: 4055576184639091660, guid: 9ce50186723a97a428d41c12019b11b1, type: 3}
+      propertyPath: m_Size.y
+      value: 6.2404547
+      objectReference: {fileID: 0}
     - target: {fileID: 4055576184639091662, guid: 9ce50186723a97a428d41c12019b11b1, type: 3}
       propertyPath: m_Name
       value: Background-Wall
