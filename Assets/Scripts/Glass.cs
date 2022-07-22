@@ -15,7 +15,7 @@ public class Glass : Receptacle
         if (other.GetComponent<Fluid>())
         {
             FluidType otherType = other.GetComponent<Fluid>().fluidType;
-            GameEvents.OnIngredientEnterGlassEvent?.Invoke(otherType);
+            GameEvents.OnIngredientEnterGlassEvent?.Invoke(otherType, this.receptacleType);
         }
     }
 
@@ -27,7 +27,7 @@ public class Glass : Receptacle
         if (other.GetComponent<Fluid>())
         {
             FluidType otherType = other.GetComponent<Fluid>().fluidType;
-            GameEvents.OnIngredientEnterGlassEvent?.Invoke(otherType);
+            GameEvents.OnIngredientExitGlassEvent?.Invoke(otherType, this.receptacleType);
         }
     }
 }

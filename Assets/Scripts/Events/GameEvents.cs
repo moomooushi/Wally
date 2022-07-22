@@ -1,12 +1,13 @@
 ﻿using ScriptableObjects;
+using ScriptableObjects.Receptacles;
 using UnityEngine;
 
 namespace Events
 {
     public class GameEvents
     {
-        public delegate void FluidInGlass(IngredientType ingredientType);
-        public delegate void FluidExitGlass(IngredientType ingredientType);
+        public delegate void FluidInGlass(IngredientType ingredientType, ReceptacleType receptacleType);
+        public delegate void FluidExitGlass(IngredientType ingredientType, ReceptacleType receptacleType);
         public delegate void DetermineLevelCompletion();
         public delegate void LevelCompleted();
         public delegate void LoadEndState();

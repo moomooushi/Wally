@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Events;
+using ScriptableObjects.Receptacles;
 using UnityEngine.SceneManagement;
 
 namespace ScriptableObjects
@@ -50,9 +51,9 @@ namespace ScriptableObjects
             ResetValues();
         }
 
-        public void IncreaseCount(IngredientType ingredientType)
+        public void IncreaseCount(IngredientType ingredientType, ReceptacleType receptacleRequirement)
         {
-            var i = ingredientsList.FirstOrDefault(s => s.ingredientType == ingredientType);
+            var i = ingredientsList.FirstOrDefault(s => s.ingredientType == ingredientType && s.receptacleRequirement == receptacleRequirement);
             
             if(i != null)
                 i.IncreaseCount();
@@ -60,9 +61,9 @@ namespace ScriptableObjects
             GameEvents.OnIngredientUpdatedEvent?.Invoke();
         }
         
-        public void ReduceCount(IngredientType ingredientType)
+        public void ReduceCount(IngredientType ingredientType, ReceptacleType receptacleRequirement)
         {
-            var i = ingredientsList.FirstOrDefault(s => s.ingredientType == ingredientType);
+            var i = ingredientsList.FirstOrDefault(s => s.ingredientType == ingredientType && s.receptacleRequirement == receptacleRequirement);
            
             if(i != null )
                 i.ReduceCount();
