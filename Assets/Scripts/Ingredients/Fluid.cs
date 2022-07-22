@@ -1,5 +1,4 @@
-﻿using Events;
-using ScriptableObjects;
+﻿using ScriptableObjects;
 using UnityEngine;
 
 namespace Ingredients

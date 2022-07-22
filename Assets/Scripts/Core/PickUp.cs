@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class PickUp: MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class PickUp: MonoBehaviour
     {
         _camera = Camera.main;
     }
-
+    
     private void Update()
     {
         if (_camera != null) _mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
@@ -34,14 +35,17 @@ public class PickUp: MonoBehaviour
                 if (hit.collider == null) return;
 
                 PickUpObject(hit.transform.gameObject);
-                Debug.Log(hit.collider.gameObject.transform.position);
+//                Debug.Log(hit.collider.gameObject.transform.position);
             }
             else
             {
                 DropObject();
             }
         }
-        
+    }
+
+    private void FixedUpdate()
+    {
         if (heldObject != null)
         {
             MoveObject();
@@ -57,7 +61,7 @@ public class PickUp: MonoBehaviour
             }
         }
     }
-    
+
     private void MoveObject()
     {
         if (Vector2.Distance(heldObject.transform.position, holdParent.position) > 0.1f)
