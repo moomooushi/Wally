@@ -15,13 +15,15 @@ MonoBehaviour:
   name: Level 2
   ingredientsList:
   - ingredientType: {fileID: 11400000, guid: a5b7d5fc014716a4489e175044eabd9c, type: 2}
+    receptacleRequirement: {fileID: 11400000, guid: 924bbf57d8b6b3349b76bed31e81389a, type: 2}
     requirement: 10
-    count: 33
-    complete: 1
+    count: 0
+    complete: 0
   - ingredientType: {fileID: 11400000, guid: 5b1e87e957de5a74f8b706ff70b19ff3, type: 2}
+    receptacleRequirement: {fileID: 11400000, guid: 48aff20db7f8bd94099605a07d83cfc2, type: 2}
     requirement: 10
-    count: 50
-    complete: 1
+    count: 0
+    complete: 0
   cashReward: 150
-  _rewardGiven: 1
-  levelComplete: 1
+  rewardGiven: 0
+  levelComplete: 0
