@@ -15,7 +15,8 @@ namespace Events
         public delegate void WalletUpdated(float value);
         public delegate void NextScene();
         public delegate void AudioCollision(AudioClip clip);
-        
+
+        public delegate void NewLevel();
         public delegate void SessionEnd();
         
         public static FluidInGlass OnIngredientEnterGlassEvent;
@@ -27,6 +28,7 @@ namespace Events
         public static LoadEndState OnShowLevelEndStateEvent;
         public static NextScene OnLoadNextSceneEvent;
         public static AudioCollision OnAudioCollisionEvent;
+        public static NewLevel OnRequestNewLevelEvent;
         public static SessionEnd OnSessionEndedEvent;
     }
 }

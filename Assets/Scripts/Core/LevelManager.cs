@@ -96,12 +96,19 @@ namespace Core
             currentLevelData = _currentLevelInstance.levelData;
             currentLevel = currentLevelData.name;
             
-            _ = currentLevel == "Level 1" ? previousLevel = null : previousLevel = UpdateLevelString(currentLevel, -1);
             
-            string nextLevelTemp = UpdateLevelString(currentLevel, 1);
-            string[] nextSceneName = UnityEngine.SceneManagement.SceneUtility.GetScenePathByBuildIndex(currentSceneBuildID + 1).Split("/");
-            nextLevel = nextLevelTemp == nextSceneName.Last().Replace(".unity", "") ? nextLevelTemp : nextLevel = fallBackScene;
-            Debug.Log(nextLevelTemp + " " + nextSceneName.Last());
+            if (!currentLevel.Contains("Random Level"))
+            {
+                _ = currentLevel == "Level 1" ? previousLevel = null : previousLevel = UpdateLevelString(currentLevel, -1);
+                string nextLevelTemp = UpdateLevelString(currentLevel, 1);
+                string[] nextSceneName = UnityEngine.SceneManagement.SceneUtility
+                    .GetScenePathByBuildIndex(currentSceneBuildID + 1).Split("/");
+                nextLevel = nextLevelTemp == nextSceneName.Last().Replace(".unity", "")
+                    ? nextLevelTemp
+                    : nextLevel = fallBackScene;
+                Debug.Log(nextLevelTemp + " " + nextSceneName.Last());
+            }
+            
         }
         
     }

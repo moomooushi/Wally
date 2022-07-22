@@ -32,7 +32,7 @@ namespace Audio
         AudioClip GetRandomClip(List<AudioClip> listOfClips)
         {
             AudioClip clip = listOfClips[Random.Range(0, listOfClips.Count)];
-            Debug.Log("We got a random clip to play " + clip);
+//            Debug.Log("We got a random clip to play " + clip);
             return clip;
         }
 
