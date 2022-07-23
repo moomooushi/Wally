@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8c98266c8804168a266e8feb8da95fe, type: 3}
+  m_Name: Dialogue_RandomLevel
+  m_EditorClassIdentifier: 
+  list:
+  - Here is a dialogue test for the dialogue that is going to be said by wally
+  - A new drink order is ready!
