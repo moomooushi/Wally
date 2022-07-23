@@ -116,6 +116,7 @@ namespace Core
         {
             currentLevelData = _currentLevelInstance.levelData;
             currentLevel = currentLevelData.name;
+            // todo when the current level data is updated we need to alert the UI so that it can write a new mission UI 
         }
         
     }
