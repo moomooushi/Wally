@@ -10,7 +10,7 @@ namespace Audio
     {
         [SerializeField] private ConstructionMaterialType constructionMaterial;
         List<AudioClip> _clips;
-        [SerializeField] private float clipPlayWaitTime = 0.01f;
+        [SerializeField] private float clipPlayWaitTime = 0.5f;
         private bool _isAvailable = true;
 
         private void Start()
@@ -23,7 +23,7 @@ namespace Audio
         {
             if (_isAvailable == false)
                 return;
-
+            
             StartCoroutine(StartCooldown());
             AudioClip randomClip = GetRandomClip(_clips);
             GameEvents.OnAudioCollisionEvent?.Invoke(randomClip);

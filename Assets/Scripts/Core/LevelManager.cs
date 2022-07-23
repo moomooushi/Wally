@@ -30,6 +30,7 @@ namespace Core
             SceneManager.sceneLoaded += OnSceneLoaded;
             GameEvents.OnShowLevelEndStateEvent += LoadEndState;
             GameEvents.OnLoadNextSceneEvent += LoadNextScene;
+            GameEvents.OnNewLevelCreatedEvent += GetCurrentLevelData;
         }
 
         private void OnDisable()
@@ -37,6 +38,7 @@ namespace Core
             SceneManager.sceneLoaded -= OnSceneLoaded;
             GameEvents.OnShowLevelEndStateEvent -= LoadEndState;
             GameEvents.OnLoadNextSceneEvent -= LoadNextScene;
+            GameEvents.OnNewLevelCreatedEvent -= GetCurrentLevelData;
         }
 
         private void Awake()
@@ -93,9 +95,8 @@ namespace Core
             if (GameObject.Find("LevelData")) {
                 _currentLevelInstance = GameObject.Find("LevelData").GetComponent<Level>();
             }
-            currentLevelData = _currentLevelInstance.levelData;
-            currentLevel = currentLevelData.name;
             
+            GetCurrentLevelData();
             
             if (!currentLevel.Contains("Random Level"))
             {
@@ -109,6 +110,12 @@ namespace Core
                 Debug.Log(nextLevelTemp + " " + nextSceneName.Last());
             }
             
+        }
+
+        void GetCurrentLevelData()
+        {
+            currentLevelData = _currentLevelInstance.levelData;
+            currentLevel = currentLevelData.name;
         }
         
     }

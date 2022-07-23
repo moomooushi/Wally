@@ -167,4 +167,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   constructionMaterial: {fileID: 0}
-  clipPlayWaitTime: 0.01
+  clipPlayWaitTime: 0.5

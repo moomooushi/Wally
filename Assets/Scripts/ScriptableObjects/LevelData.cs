@@ -1,9 +1,11 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 using Events;
 using ScriptableObjects.Receptacles;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 namespace ScriptableObjects
 {
@@ -12,7 +14,15 @@ namespace ScriptableObjects
     {
         public new string name;
         public List<Entry> ingredientsList = new();
-        public float cashReward;
+        [SerializeField]
+        private float cashReward;
+
+        public float CashReward
+        {
+            get => cashReward;
+            private set => cashReward = value;
+        }
+
         [SerializeField]
         private bool rewardGiven = false;
         [SerializeField]
@@ -29,7 +39,7 @@ namespace ScriptableObjects
                     if (rewardGiven == false)
                     {
                         rewardGiven = true;
-                        GameEvents.OnUpdateWalletEvent?.Invoke(cashReward);
+                        GameEvents.OnUpdateWalletEvent?.Invoke(CashReward);
                     } 
                         
                     GameEvents.OnLevelCompletedEvent?.Invoke();
@@ -40,6 +50,8 @@ namespace ScriptableObjects
         private void OnEnable()
         {
             GameEvents.OnIngredientUpdatedEvent += SetLevelCompleted;
+            GameEvents.OnIngredientEnterGlassEvent += IncreaseCount;
+            GameEvents.OnIngredientExitGlassEvent += ReduceCount;
             SceneManager.sceneLoaded += ResetValues;
             ResetValues();
         }
@@ -47,6 +59,8 @@ namespace ScriptableObjects
         private void OnDisable()
         {
             GameEvents.OnIngredientUpdatedEvent -= SetLevelCompleted;
+            GameEvents.OnIngredientEnterGlassEvent -= IncreaseCount; 
+            GameEvents.OnIngredientExitGlassEvent -= ReduceCount;
             SceneManager.sceneLoaded -= ResetValues;
             ResetValues();
         }
@@ -92,6 +106,16 @@ namespace ScriptableObjects
             bool testComplete = ingredientsList.All(s => s.complete);
             LevelComplete = testComplete;
             Debug.Log("All level Reqs complete: " + testComplete);
+        }
+
+        public void SetReward()
+        {
+            float value = 0;
+            foreach (Entry entry in ingredientsList)
+            {
+                value += entry.ingredientType.ingredientPrice * entry.requirement;
+            }
+            CashReward = value;
         }
        
     }

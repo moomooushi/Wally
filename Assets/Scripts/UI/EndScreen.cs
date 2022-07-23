@@ -1,4 +1,4 @@
-using System.ComponentModel;
+using System;
 using Core;
 using Events;
 using ScriptableObjects;
@@ -31,7 +31,7 @@ public class EndScreen : MonoBehaviour
         // todo: this level data thingy is not good here. I don't like. Should be decoupled.
         if (GameObject.Find("LevelData")) {
             levelData = GameObject.Find("LevelData").GetComponent<Level>().levelData;
-            UpdateDescription(levelData.cashReward);
+            UpdateDescription(levelData.CashReward);
         }
         else
         {
@@ -42,16 +42,18 @@ public class EndScreen : MonoBehaviour
     private void OnEnable()
     {
         SceneManager.sceneUnloaded += DestroyEndScreen;
+        GameEvents.OnRequestNewLevelEvent += OnDestroy;
     }
     private void OnDisable()
     {
         SceneManager.sceneUnloaded -= DestroyEndScreen;
+        GameEvents.OnRequestNewLevelEvent -= OnDestroy;
     }
     
     private void Start()
     {
         if(levelData != null)
-            UpdateDescription(levelData.cashReward);
+            UpdateDescription(levelData.CashReward);
 
         if (!LevelManager.Instance.nextLevel.Contains("Level "))
         {
@@ -81,7 +83,11 @@ public class EndScreen : MonoBehaviour
     
     private void DestroyEndScreen(Scene arg0)
     {
-        Destroy(this.gameObject);
+        OnDestroy();
     }
     
+    private void OnDestroy()
+    {
+        Destroy(this.gameObject, 0.5f);
+    }
 }

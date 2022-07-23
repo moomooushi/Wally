@@ -23,6 +23,7 @@ namespace LevelGen
            newLevelData.name = "Random Level";
            int numberOfEntries = Random.Range(ingredients.x, ingredients.y);
            newLevelData.ingredientsList = CreateIngredientList(numberOfEntries);
+           newLevelData.SetReward();
            return newLevelData; 
         }
 

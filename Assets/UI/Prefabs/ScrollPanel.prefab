@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4052378038615103938}
   - component: {fileID: 6817169105457033905}
   - component: {fileID: 5645973204138833198}
+  - component: {fileID: 6497504137801099007}
   m_Layer: 5
   m_Name: ScrollPanel
   m_TagString: Untagged
@@ -291,7 +292,7 @@ MonoBehaviour:
   target: {fileID: 4052378038615103950}
   animationType: 7
   targetType: 3
-  forcedTargetType: 0
+  forcedTargetType: 3
   autoPlay: 1
   useTargetAsV3: 0
   endValueFloat: 0
@@ -353,6 +354,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 0
+--- !u!225 &6497504137801099007
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4052378038615103944}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &4052378039183103095
 GameObject:
   m_ObjectHideFlags: 0
