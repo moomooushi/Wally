@@ -217,17 +217,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4684769483708125770, guid: 7529f2398144b5349b4709199bf2b37f, type: 3}
   m_PrefabInstance: {fileID: 73832313}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &413730446 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3754390412699903255, guid: c2d30ec1a3be6604dae5b86f13c655f2, type: 3}
-  m_PrefabInstance: {fileID: 3754390412575712153}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &525026791
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1558,7 +1547,7 @@ PrefabInstance:
     - target: {fileID: 541893005779652277, guid: c2d30ec1a3be6604dae5b86f13c655f2, type: 3}
       propertyPath: textField
       value: 
-      objectReference: {fileID: 413730446}
+      objectReference: {fileID: 0}
     - target: {fileID: 541893005779652277, guid: c2d30ec1a3be6604dae5b86f13c655f2, type: 3}
       propertyPath: dialogueData
       value: 
@@ -1566,6 +1555,14 @@ PrefabInstance:
     - target: {fileID: 541893005779652277, guid: c2d30ec1a3be6604dae5b86f13c655f2, type: 3}
       propertyPath: _dialogueData
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3754390412699903241, guid: c2d30ec1a3be6604dae5b86f13c655f2, type: 3}
+      propertyPath: hasOnStart
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3754390412699903241, guid: c2d30ec1a3be6604dae5b86f13c655f2, type: 3}
+      propertyPath: optionalBool0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3754390412699903252, guid: c2d30ec1a3be6604dae5b86f13c655f2, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1585,6 +1582,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3754390412699903252, guid: c2d30ec1a3be6604dae5b86f13c655f2, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3754390412699903255, guid: c2d30ec1a3be6604dae5b86f13c655f2, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3754390412699903255, guid: c2d30ec1a3be6604dae5b86f13c655f2, type: 3}
+      propertyPath: m_fontSize
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3754390412699903255, guid: c2d30ec1a3be6604dae5b86f13c655f2, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3754390412699903255, guid: c2d30ec1a3be6604dae5b86f13c655f2, type: 3}
+      propertyPath: m_characterSpacing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3754390412699903255, guid: c2d30ec1a3be6604dae5b86f13c655f2, type: 3}
+      propertyPath: m_enableAutoSizing
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3754390413252807220, guid: c2d30ec1a3be6604dae5b86f13c655f2, type: 3}
@@ -1675,7 +1692,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpeechBubble
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 541893005779652277, guid: c2d30ec1a3be6604dae5b86f13c655f2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c2d30ec1a3be6604dae5b86f13c655f2, type: 3}
 --- !u!1001 &4131259429223279239
 PrefabInstance:
