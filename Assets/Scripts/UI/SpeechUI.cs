@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using DG.Tweening;
 using Events;
 using ScriptableObjects;
 using TMPro;
@@ -14,41 +15,55 @@ namespace UI
         private Dialogues dialogues;
         [SerializeField]
         private TMP_Text textField;
+        [Header("Animation Settings")]
         [SerializeField]
         private float durationPerCharacter = 0.1f;
-        [SerializeField]
-        List<string> temp = new();
         [SerializeField] private float delayBetweenStrings = 2f;
         private readonly AnimateText _textAnimator = new();
-        
+        [SerializeField] private float initialDelay;
+        [Header("Replacement Variables")]
+        [SerializeField]
+        private string receptacleString = "{receptacle}";
+        [SerializeField]
+        private string ingredientString = "{ingredient}";
+        List<string> temp = new();
+
         private void OnEnable()
         {
+            DOTween.PlayAll();
             GameEvents.OnNewLevelCreatedEvent += NewOrderDialogue;
         }
         private void OnDisable()
         {
+            DOTween.RewindAll();
             GameEvents.OnNewLevelCreatedEvent -= NewOrderDialogue;
         }
 
         void NewOrderDialogue(Level level)
         {
             // Todo: This is on track, but needs a LOT of work. When there is more than one entry we needed to add another list item before the last entry
-            string drink = "drinkName";
-            string requirement = "requirementName";
-            var drinkOrder = dialogues.list.Where(s => s.Contains("{drink}") || s.Contains("{glass}"));
-
+            var drinkOrder = dialogues.list.Where(s => s.Contains(ingredientString) && s.Contains(receptacleString)).ToList();
             foreach (Entry entry in level.levelData.ingredientsList)
             {
-                drink = entry.ingredientType.name;
-                requirement = entry.receptacleRequirement.name;
-                foreach (string s in dialogues.list)
+                var ingredientName = entry.ingredientType.name;
+                var receptacleName = entry.receptacleRequirement.name;
+                
+                foreach (string order in drinkOrder)
                 {
-                    temp.Add(s.Replace("{drink}", drink).Replace("{glass}", requirement));
+                  temp.Add(order.Replace(ingredientString, ingredientName).Replace(receptacleString, receptacleName));
                 }
             }
+
+            List<string> combinedList = new();
+            dialogues.list.ForEach(item=> combinedList.Add(item));
+            var tobeRemoved = combinedList.FindIndex(f=>f.Contains(ingredientString) && f.Contains(receptacleString));
+            combinedList.RemoveAt(tobeRemoved);
+            combinedList.InsertRange(tobeRemoved, temp);
+            temp.Clear();
             
-            _textAnimator.AnimateArray(textField, temp, durationPerCharacter, delayBetweenStrings);
+            _textAnimator.AnimateArray(textField, combinedList, durationPerCharacter, delayBetweenStrings, initialDelay);
         }
-        
     }
+
+    
 }

@@ -6,11 +6,10 @@ namespace Utility
 {
     public class AnimateText
     {
-        public void AnimateArray(TMP_Text textField, List<string> list, float durationPerCharacter = 0.1f, float delayBetweenStrings = 2f)
+        public void AnimateArray(TMP_Text textField, List<string> list, float durationPerCharacter = 0.1f, float delayBetweenStrings = 2f, float initialDelay = 0)
         {
-            Sequence textSequence =  DOTween.Sequence();
-//            DOTweenTMPAnimator animator = new DOTweenTMPAnimator(textField);
-            // Clear the text field for the initial run through.
+            Sequence textSequence =  DOTween.Sequence().SetDelay(initialDelay);
+
             textField.text = "";
 
             foreach (string s in list)

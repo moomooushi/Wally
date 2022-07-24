@@ -115,7 +115,7 @@ MonoBehaviour:
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
-  m_enableExtraPadding: 0
+  m_enableExtraPadding: 1
   checkPaddingRequired: 0
   m_isRichText: 1
   m_parseCtrlCharacters: 1
@@ -270,3 +270,5 @@ MonoBehaviour:
   dialogues: {fileID: 11400000, guid: 35fa0f95760a05c4992d5f38e9d138d4, type: 2}
   textField: {fileID: 3754390412699903255}
   durationPerCharacter: 0.1
+  temp: []
+  delayBetweenStrings: 2

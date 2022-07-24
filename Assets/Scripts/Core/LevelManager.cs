@@ -89,7 +89,7 @@ namespace Core
             currentSceneBuildID = scene.buildIndex;
             // We don't need this code below to run if we are in the random level mode
             GetCurrentLevelData(null);
-            if (currentLevel == "Random Levels")
+            if (scene.name == "Random Levels")
             {
                 return;
             }

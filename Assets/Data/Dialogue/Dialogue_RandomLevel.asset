@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Dialogue_RandomLevel
   m_EditorClassIdentifier: 
   list:
-  - Great job!
   - There's a new order already.
-  - They want {drink} in a {glass}.
+  - They want {ingredient} in a {receptacle}.
   - Get going!
