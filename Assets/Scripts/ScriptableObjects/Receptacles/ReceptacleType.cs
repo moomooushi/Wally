@@ -1,4 +1,5 @@
-﻿using ScriptableObjects.MaterialInteractions;
+﻿using ScriptableObjects.Ingredients;
+using ScriptableObjects.MaterialInteractions;
 using UnityEngine;
 
 namespace ScriptableObjects.Receptacles

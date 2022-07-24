@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using ScriptableObjects.Receptacles;
+﻿using ScriptableObjects.Receptacles;
 using UnityEngine;
 
 namespace ScriptableObjects

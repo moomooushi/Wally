@@ -1,4 +1,5 @@
 ﻿using ScriptableObjects;
+using ScriptableObjects.Ingredients;
 using ScriptableObjects.Receptacles;
 using UnityEngine;
 

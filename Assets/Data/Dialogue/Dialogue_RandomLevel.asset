@@ -15,4 +15,5 @@ MonoBehaviour:
   list:
   - Great job!
   - There's a new order already.
-  - They want {drink} in a {glass} glass.
+  - They want {drink} in a {glass}.
+  - Get going!

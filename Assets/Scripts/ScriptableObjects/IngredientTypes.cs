@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using ScriptableObjects.Ingredients;
 using UnityEngine;
 
 namespace ScriptableObjects

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using ScriptableObjects.Ingredients;
+using UnityEngine;
 
 namespace ScriptableObjects
 {
