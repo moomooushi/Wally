@@ -1,3 +1,4 @@
+using System;
 using Events;
 using ScriptableObjects;
 using UnityEngine;
@@ -16,6 +17,10 @@ namespace LevelGen
         private void Awake()
         { 
             levelDataGenerator = GetComponent<LevelDataGenerator>();
+        }
+
+        private void Start()
+        {
             CreateNewLevel();
         }
 
@@ -43,7 +48,7 @@ namespace LevelGen
                 if(level.levelData != null)
                     levelData = level.levelData;
             }
-            GameEvents.OnNewLevelCreatedEvent?.Invoke();
+            GameEvents.OnNewLevelCreatedEvent?.Invoke(level);
         }
 
         void DestroyLevel()

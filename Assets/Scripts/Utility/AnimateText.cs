@@ -1,41 +1,24 @@
+﻿using System.Collections.Generic;
 using DG.Tweening;
-using ScriptableObjects;
 using TMPro;
-using UnityEngine;
 
 namespace Utility
 {
-    public class AnimateText : MonoBehaviour
+    public class AnimateText
     {
-        [SerializeField]
-        private Dialogues dialogues;
-        [SerializeField]
-        private TMP_Text textField;
-        DOTweenTMPAnimator _animator;
-        private Sequence _textSequence;
-        private void Start()
+        public void AnimateArray(TMP_Text textField, List<string> list, float durationPerCharacter = 0.1f, float delayBetweenStrings = 2f)
         {
-            if(dialogues != null)
-                SetUpTextAnimations();
-        }
-
-//        private void Update()
-//        {
-////            foreach (string s in dialogues.list)
-////            {
-////                textField.text = s;
-////            }
-//        }
-        void SetUpTextAnimations()
-        {
-            _textSequence =  DOTween.Sequence();
-            _animator = new DOTweenTMPAnimator(textField);
+            Sequence textSequence =  DOTween.Sequence();
+//            DOTweenTMPAnimator animator = new DOTweenTMPAnimator(textField);
+            // Clear the text field for the initial run through.
             textField.text = "";
 
-            foreach (string s in dialogues.list)
+            foreach (string s in list)
             {
-                _textSequence.Append(textField.DOText(s,3)).AppendCallback(() => textField.text = "");
+                Tween tween = textField.DOText(s,s.Length * durationPerCharacter).SetEase(Ease.Linear);
+                textSequence.Append(tween).AppendInterval(delayBetweenStrings).AppendCallback(() => textField.text = "");
             }
         }
     }
+    
 }

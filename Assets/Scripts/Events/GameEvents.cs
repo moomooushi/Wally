@@ -17,7 +17,7 @@ namespace Events
         public delegate void AudioCollision(AudioClip clip);
         public delegate void NewLevel();
         public delegate void SessionEnd();
-        public delegate void LevelCreated();
+        public delegate void LevelCreated(Level level);
         
         public static FluidInGlass OnIngredientEnterGlassEvent;
         public static FluidExitGlass OnIngredientExitGlassEvent;

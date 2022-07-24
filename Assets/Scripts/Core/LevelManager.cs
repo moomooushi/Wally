@@ -13,8 +13,9 @@ namespace Core
         [ReadOnly]
         public string previousLevel, currentLevel, nextLevel;
         public int currentSceneBuildID;
+        [SerializeField]
         private Level _currentLevelInstance;
-        [SerializeField] private LevelData currentLevelData;
+        [SerializeField] public LevelData currentLevelData;
         [SerializeField] private float levelCompleteTimeOut = 5;
         public GameObject levelCompleteUI;
         [SerializeField][ReadOnly] private bool runCoroutine;
@@ -23,6 +24,20 @@ namespace Core
         {
             get => runCoroutine;
             private set => runCoroutine = value;
+        }
+        
+        private void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+                DontDestroyOnLoad(this.gameObject);
+            } else if (Instance != null)
+            {
+                Destroy(this.gameObject);
+            }
+
+            RunCoroutine = true;
         }
         
         private void OnEnable()
@@ -41,26 +56,6 @@ namespace Core
             GameEvents.OnNewLevelCreatedEvent -= GetCurrentLevelData;
         }
 
-        private void Awake()
-        {
-            if (Instance == null)
-            {
-                Instance = this;
-                DontDestroyOnLoad(this.gameObject);
-            } else if (Instance != null)
-            {
-                Destroy(this.gameObject);
-            }
-
-            RunCoroutine = true;
-        }
-
-        static string UpdateLevelString(string id, int increment)
-        {
-            string[] arr = id.Split(" ");
-            return arr[0] + " " + (int.Parse(arr[1]) + increment);
-        }
-        
         private void LoadEndState()
         {
             Debug.Log("SHOWING END STATE");
@@ -92,31 +87,77 @@ namespace Core
         public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
             currentSceneBuildID = scene.buildIndex;
-            if (GameObject.Find("LevelData")) {
-                _currentLevelInstance = GameObject.Find("LevelData").GetComponent<Level>();
-            }
-            
-            GetCurrentLevelData();
-            
-            if (!currentLevel.Contains("Random Level"))
+            // We don't need this code below to run if we are in the random level mode
+            GetCurrentLevelData(null);
+            if (currentLevel == "Random Levels")
             {
-                _ = currentLevel == "Level 1" ? previousLevel = null : previousLevel = UpdateLevelString(currentLevel, -1);
-                string nextLevelTemp = UpdateLevelString(currentLevel, 1);
-                string[] nextSceneName = UnityEngine.SceneManagement.SceneUtility
-                    .GetScenePathByBuildIndex(currentSceneBuildID + 1).Split("/");
-                nextLevel = nextLevelTemp == nextSceneName.Last().Replace(".unity", "")
-                    ? nextLevelTemp
-                    : nextLevel = fallBackScene;
-                Debug.Log(nextLevelTemp + " " + nextSceneName.Last());
+                return;
             }
-            
+
+            ManageSceneNames();
+
         }
 
-        void GetCurrentLevelData()
+        void GetCurrentLevelData(Level level)
         {
-            currentLevelData = _currentLevelInstance.levelData;
-            currentLevel = currentLevelData.name;
+            if (level != null)
+            {
+                _currentLevelInstance = level;
+                SetLevelData();
+            } else {
+                FindLevelDataInScene("LevelData");
+            }
+            
+            SetLevelData();
+            
+            void SetLevelData()
+            {
+                if (_currentLevelInstance != null)
+                {
+                    currentLevelData = _currentLevelInstance.levelData;
+                    currentLevel = SceneManager.GetActiveScene().name;
+                }  
+            }
             // todo when the current level data is updated we need to alert the UI so that it can write a new mission UI 
+        }
+
+        void FindLevelDataInScene(string toFind)
+        {
+            if (GameObject.Find(toFind)) {
+                _currentLevelInstance = GameObject.Find(toFind).GetComponent<Level>();
+            }
+        }
+
+        void ManageSceneNames()
+        {
+            if( currentLevel == "Level 1")
+            {
+                previousLevel = null;
+            } else {
+                 previousLevel = UpdateLevelString(currentLevel, -1);
+            }
+                
+            string nextLevelTemp = UpdateLevelString(currentLevel, 1);
+                
+            string[] nextSceneName = UnityEngine.SceneManagement.SceneUtility
+                .GetScenePathByBuildIndex(currentSceneBuildID + 1).Split("/");
+                
+            nextLevel = nextLevelTemp == nextSceneName.Last().Replace(".unity", "")
+                ? nextLevelTemp
+                : nextLevel = fallBackScene;
+                
+            Debug.Log(nextLevelTemp + " " + nextSceneName.Last());
+        }
+        
+        static string UpdateLevelString(string id, int increment)
+        {
+            int i;
+            var arr = id.Split(" ");
+            if(int.TryParse(arr.Last(), out i) ) {
+                return arr[0] + " " + arr.Last() + increment;
+            }
+
+            return null;
         }
         
     }

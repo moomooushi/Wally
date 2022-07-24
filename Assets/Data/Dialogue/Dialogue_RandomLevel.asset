@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Dialogue_RandomLevel
   m_EditorClassIdentifier: 
   list:
-  - Here is a dialogue test for the dialogue that is going to be said by wally
-  - and then wally will say this
+  - Great job!
+  - There's a new order already.
+  - They want {drink} in a {glass} glass.
