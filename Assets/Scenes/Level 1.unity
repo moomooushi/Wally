@@ -1368,6 +1368,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8031115020306267880, guid: d20461c43172e324eb18ce5628cac9c8, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8031115020306267880, guid: d20461c43172e324eb18ce5628cac9c8, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d20461c43172e324eb18ce5628cac9c8, type: 3}
 --- !u!4 &1190091018 stripped
@@ -2333,6 +2341,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelData
       objectReference: {fileID: 0}
+    - target: {fileID: 4095342692554296213, guid: 3c1da7f469921a94f88943746c90c9ac, type: 3}
+      propertyPath: levelData
+      value: 
+      objectReference: {fileID: 11400000, guid: 0d914aac3d521184899ed427cc3633ac, type: 2}
     - target: {fileID: 4095342692554296218, guid: 3c1da7f469921a94f88943746c90c9ac, type: 3}
       propertyPath: m_RootOrder
       value: 5
