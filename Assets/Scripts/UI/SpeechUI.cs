@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using DG.Tweening;
@@ -27,21 +28,37 @@ namespace UI
         [SerializeField]
         private string ingredientString = "{ingredient}";
         List<string> temp = new();
+        private CanvasGroup _canvasGroup;
+        private RectTransform _speechBubbleRect;
+        private Vector3 _rectPos;
+        private Vector3 _originalPos;
+        
+
+        private void Awake()
+        {
+            _speechBubbleRect = this.gameObject.GetComponent<RectTransform>();
+            _rectPos = _speechBubbleRect.localPosition;
+            _originalPos = _rectPos;
+            _rectPos.y += 10;
+            _canvasGroup = GetComponent<CanvasGroup>();
+        }
 
         private void OnEnable()
         {
-            DOTween.PlayAll();
             GameEvents.OnNewLevelCreatedEvent += NewOrderDialogue;
+            AnimateText.AnimationComplete += AnimateOut;
         }
+        
+
         private void OnDisable()
         {
             DOTween.RewindAll();
             GameEvents.OnNewLevelCreatedEvent -= NewOrderDialogue;
+            AnimateText.AnimationComplete -= AnimateOut;
         }
 
         void NewOrderDialogue(Level level)
         {
-            // Todo: This is on track, but needs a LOT of work. When there is more than one entry we needed to add another list item before the last entry
             var drinkOrder = dialogues.list.Where(s => s.Contains(ingredientString) && s.Contains(receptacleString)).ToList();
             foreach (Entry entry in level.levelData.ingredientsList)
             {
@@ -62,6 +79,20 @@ namespace UI
             temp.Clear();
             
             _textAnimator.AnimateArray(textField, combinedList, durationPerCharacter, delayBetweenStrings, initialDelay);
+            AnimateIn();
+        }
+        
+        void AnimateIn()
+        {
+            _canvasGroup.alpha = 0;
+            _speechBubbleRect.transform.DOLocalMoveY(_rectPos.y + 20, .2f);
+            _canvasGroup.DOFade(1,.2f);
+        }
+        
+        void AnimateOut()
+        {
+            _speechBubbleRect.transform.DOLocalMoveY(_originalPos.y, .2f);
+            _canvasGroup.DOFade(0,.2f);
         }
     }
 

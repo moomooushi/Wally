@@ -20,15 +20,13 @@ namespace ScriptableObjects.Receptacles
         {
             TotalPrice = GetPrice();
         }
-
-        private void OnValidate()
-        {
-            TotalPrice = GetPrice();
-        }
-
+        
         float GetPrice()
         {
-            return ingredientType.ingredientPrice * fillCount;
+            if(ingredientType != null)
+                return ingredientType.ingredientPrice * fillCount;
+
+            return 0;
         }
     }
 }

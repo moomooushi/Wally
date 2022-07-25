@@ -145,10 +145,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3754390413252807220}
   - component: {fileID: 3754390413252807208}
+  - component: {fileID: 4575501633037502402}
   - component: {fileID: 3754390413252807209}
   - component: {fileID: 3754390413252807222}
   - component: {fileID: 3754390413252807223}
-  - component: {fileID: 4575501633037502402}
+  - component: {fileID: 8965994270018009285}
   m_Layer: 5
   m_Name: SpeechBubble
   m_TagString: Untagged
@@ -185,6 +186,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3754390413252807221}
   m_CullTransparentMesh: 1
+--- !u!114 &4575501633037502402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3754390413252807221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 715cd2131f5021c4eae3684f82bbe497, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogues: {fileID: 11400000, guid: 35fa0f95760a05c4992d5f38e9d138d4, type: 2}
+  textField: {fileID: 3754390412699903255}
+  durationPerCharacter: 0.1
+  delayBetweenStrings: 2
+  initialDelay: 0
+  receptacleString: '{receptacle}'
+  ingredientString: '{ingredient}'
 --- !u!114 &3754390413252807209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,20 +275,15 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
---- !u!114 &4575501633037502402
-MonoBehaviour:
+--- !u!225 &8965994270018009285
+CanvasGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3754390413252807221}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 715cd2131f5021c4eae3684f82bbe497, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogues: {fileID: 11400000, guid: 35fa0f95760a05c4992d5f38e9d138d4, type: 2}
-  textField: {fileID: 3754390412699903255}
-  durationPerCharacter: 0.1
-  temp: []
-  delayBetweenStrings: 2
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
