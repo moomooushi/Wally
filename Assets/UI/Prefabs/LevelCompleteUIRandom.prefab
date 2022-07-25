@@ -205,7 +205,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4052378038615103951, guid: 64c11f9a33175a642aefcc39dd62a128, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 235.01
       objectReference: {fileID: 0}
     - target: {fileID: 4052378038615103951, guid: 64c11f9a33175a642aefcc39dd62a128, type: 3}
       propertyPath: m_SizeDelta.y
@@ -385,7 +385,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5645973204138833198, guid: 64c11f9a33175a642aefcc39dd62a128, type: 3}
       propertyPath: m_HorizontalFit
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6817169105457033905, guid: 64c11f9a33175a642aefcc39dd62a128, type: 3}
       propertyPath: m_Spacing

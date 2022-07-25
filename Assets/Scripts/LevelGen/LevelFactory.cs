@@ -37,16 +37,16 @@ namespace LevelGen
         void CreateNewLevel()
         {
             if (level != null)
+            {
                 DestroyLevel();
+                level = gameObject.AddComponent<Level>();
+            }
+            else
+                level = gameObject.AddComponent<Level>();
             
-            gameObject.AddComponent<Level>();
-            
-            if(gameObject.GetComponent<Level>()) {
-                level = gameObject.GetComponent<Level>();
-                if(level != null)
-                    level.levelData = levelDataGenerator.GenerateNewLevelData();
-                if(level.levelData != null)
-                    levelData = level.levelData;
+            if(level) {
+                level.levelData = levelDataGenerator.GenerateNewLevelData();
+                levelData = level.levelData;
             }
             GameEvents.OnNewLevelCreatedEvent?.Invoke(level);
         }

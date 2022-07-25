@@ -31,7 +31,7 @@ public class EndScreen : MonoBehaviour
         // todo: this level data thingy is not good here. I don't like. Should be decoupled.
         if (GameObject.Find("LevelData")) {
             levelData = GameObject.Find("LevelData").GetComponent<Level>().levelData;
-            UpdateDescription(levelData.CashReward);
+            UpdateDescription(levelData.CashReward, PlayerManager.Instance.cashBonusModifier);
         }
         else
         {
@@ -53,7 +53,7 @@ public class EndScreen : MonoBehaviour
     private void Start()
     {
         if(levelData != null)
-            UpdateDescription(levelData.CashReward);
+            UpdateDescription(levelData.CashReward, PlayerManager.Instance.cashBonusModifier);
 
         if (!LevelManager.Instance.nextLevel.Contains("Level "))
         {
@@ -71,9 +71,10 @@ public class EndScreen : MonoBehaviour
         GameEvents.OnSessionEndedEvent?.Invoke();
     }
 
-    private void UpdateDescription(float valueToAdd)
+    private void UpdateDescription(float valueToAdd, float multiplier)
     {
-        descriptionText.text = $"You gained ${valueToAdd}";
+        descriptionText.text = $"You gained ${valueToAdd} multiplied by {multiplier}";
+        descriptionText.text += $" that's a total of ${valueToAdd * multiplier}";
     }
 
     TMP_Text FindTextObject(string nameOfObject)

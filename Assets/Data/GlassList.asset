@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 341fdbd4896e41c2b44b5a1d5dfba1af, type: 3}
-  m_Name: ReceptacleTypesList_
+  m_Name: GlassList
   m_EditorClassIdentifier: 
   list:
   - {fileID: 11400000, guid: c8fcbb2e176bb4849824e49d6ea4b371, type: 2}
