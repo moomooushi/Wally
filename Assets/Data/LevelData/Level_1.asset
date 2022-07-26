@@ -15,8 +15,10 @@ MonoBehaviour:
   name: Level 1
   ingredientsList:
   - ingredientType: {fileID: 11400000, guid: 080c5f0171153ab4fa08565e48d2e191, type: 2}
+    receptacleRequirement: {fileID: 11400000, guid: 924bbf57d8b6b3349b76bed31e81389a, type: 2}
     requirement: 5
     count: 0
     complete: 0
   cashReward: 100
-  _levelComplete: 0
+  rewardGiven: 0
+  levelComplete: 0

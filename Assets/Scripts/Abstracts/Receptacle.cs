@@ -1,4 +1,5 @@
-﻿using ScriptableObjects.Receptacles;
+﻿using Ingredients;
+using ScriptableObjects.Receptacles;
 using UnityEngine;
 
 public abstract class Receptacle : MonoBehaviour
@@ -25,13 +26,14 @@ public abstract class Receptacle : MonoBehaviour
         receptacleTransform = GetComponent<Transform>();
         receptaclePosition = receptacleTransform.position;
     }
-    public void UpdateColliders()
+
+    private void UpdateColliders()
     {
         _ = gameObject.AddComponent(typeof(PolygonCollider2D)) as PolygonCollider2D;
         Debug.Log("added polygon col");
     }
 
-    public void UpdateSpriteRenderer(ReceptacleType data)
+    private void UpdateSpriteRenderer(ReceptacleType data)
     {
         if (GetComponent<SpriteRenderer>())
             DestroyImmediate(GetComponent<SpriteRenderer>());
@@ -41,19 +43,27 @@ public abstract class Receptacle : MonoBehaviour
         if (spriteRenderer != null)
             spriteRenderer.sprite = data.sprite;
     }
-    
-    public void AssignReceptacleValues()
+
+    private void AssignReceptacleValues()
     {
         if (receptacleType != null)
             name = receptacleType.name;
     }
-    
-    public void AddTransparency()
+
+    private void AddTransparency()
     {
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         Color glassSprite = sr.color;
         glassSprite.a = glassTransparency;
         sr.color = glassSprite;
+    }
+    
+    protected virtual void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.GetComponent<Ingredient>())
+        {
+            other.transform.parent = this.transform;
+        }
     }
 
 }

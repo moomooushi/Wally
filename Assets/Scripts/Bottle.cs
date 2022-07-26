@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using Ingredients;
 using ScriptableObjects;
 using ScriptableObjects.Receptacles;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Bottle : Receptacle
 {
@@ -37,7 +39,7 @@ public class Bottle : Receptacle
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
             for (int i = 0; i < _fillCount; i++)
             {
-                float randomiseX = Random.Range(0f, 0.0002f);
+                float randomiseX = Random.Range(0f, Single.Epsilon);
                 Vector3 newPos = new Vector3(receptaclePosition.x - randomiseX,
                     receptaclePosition.y, receptaclePosition.z);
                 GameObject _ = Instantiate(fluidPrefab, newPos, Quaternion.identity, receptacleTransform);

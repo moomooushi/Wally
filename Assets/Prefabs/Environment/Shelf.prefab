@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2430829968375081509
 Transform:
@@ -125,3 +125,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   constructionMaterial: {fileID: 11400000, guid: 40207d1a805c86d48953430fe0a42fb5, type: 2}
+  clipPlayWaitTime: 0.01

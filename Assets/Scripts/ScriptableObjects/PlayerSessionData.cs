@@ -2,16 +2,22 @@
 using Events;
 using ScriptableObjects.Receptacles;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace ScriptableObjects
 {
     [CreateAssetMenu(fileName = "PlayerSessionData_", menuName = "Session Data/New Player Session Data", order = 0)]
     public class PlayerSessionData : ScriptableObject
     {
-        [FormerlySerializedAs("_currentCash")] [SerializeField][ReadOnly]
+        [SerializeField][ReadOnly]
         private float currentCash;
         public List<BottleType> inventory = new();
+        [SerializeField]
+        private float _cashBonusModifier;
+        public float CashBonusModifier
+        {
+            get => _cashBonusModifier;
+            set => _cashBonusModifier = value;
+        }
 
         public float CurrentCash
         { 
@@ -31,7 +37,7 @@ namespace ScriptableObjects
 
         private void UpdateCurrentCash(float valueToAdd)
         {
-            CurrentCash += valueToAdd;
+            CurrentCash += valueToAdd * CashBonusModifier;
             GameEvents.OnWalletUpdatedEvent?.Invoke(CurrentCash);
         }
 
@@ -39,5 +45,6 @@ namespace ScriptableObjects
         {
             inventory.Add(bottleType);
         }
+        
     }
 }

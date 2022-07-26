@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 341fdbd4896e41c2b44b5a1d5dfba1af, type: 3}
+  m_Name: GlassList
+  m_EditorClassIdentifier: 
+  list:
+  - {fileID: 11400000, guid: c8fcbb2e176bb4849824e49d6ea4b371, type: 2}
+  - {fileID: 11400000, guid: 6abfce4f38c5ba54fb4bd96019f1510f, type: 2}
+  - {fileID: 11400000, guid: 4fbdc0c894ab8c6449d8dd333b39d40c, type: 2}
+  - {fileID: 11400000, guid: 8e363028b6f2f854f9e73a869737810e, type: 2}
+  - {fileID: 11400000, guid: 924bbf57d8b6b3349b76bed31e81389a, type: 2}
+  - {fileID: 11400000, guid: 48aff20db7f8bd94099605a07d83cfc2, type: 2}

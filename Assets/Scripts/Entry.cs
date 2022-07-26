@@ -1,12 +1,15 @@
 ﻿using System;
 using ScriptableObjects;
+using ScriptableObjects.Ingredients;
+using ScriptableObjects.Receptacles;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 [Serializable]
 public class Entry
 {
-    [FormerlySerializedAs("ingredient")] public IngredientType ingredientType;
+    public IngredientType ingredientType;
+    public ReceptacleType receptacleRequirement;
     public int requirement;
     [SerializeField][ReadOnly]
     private int count;
@@ -29,7 +32,6 @@ public class Entry
 
     public void ReduceCount()
     {
-
         Count--;
     }
 

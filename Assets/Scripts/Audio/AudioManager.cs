@@ -44,7 +44,7 @@ namespace Audio
 
         private void PlayClip(AudioClip clip)
         {
-            Debug.Log("Play the clip " + clip);
+//            Debug.Log("Play the clip " + clip);
             if (audioSource != null)
             {
                 audioSource.PlayOneShot(clip);

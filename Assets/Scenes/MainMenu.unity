@@ -903,6 +903,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2676324404616276845, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
+      propertyPath: m_ForceIntoRT
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676324404616276845, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
       propertyPath: orthographic size
       value: 2.8
       objectReference: {fileID: 0}
@@ -932,6 +936,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2676324404616276850, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
       propertyPath: m_UpscaleRT
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676324404616276850, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
+      propertyPath: m_CropFrameX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676324404616276850, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
+      propertyPath: m_CropFrameY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676324404616276850, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
+      propertyPath: m_StretchFill
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2676324404616276851, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
@@ -1146,7 +1162,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -37.175}
+  m_AnchoredPosition: {x: 0, y: -37.17505}
   m_SizeDelta: {x: -375.9576, y: -335.1002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1865281444
@@ -1360,6 +1376,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1493507842}
     m_Modifications:
+    - target: {fileID: 5929170693297915204, guid: 64fae4dd66c7e1045b0a121b335c3d7f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Tutorial
+      objectReference: {fileID: 0}
     - target: {fileID: 5929170693297915205, guid: 64fae4dd66c7e1045b0a121b335c3d7f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

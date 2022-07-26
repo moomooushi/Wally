@@ -1,5 +1,4 @@
-﻿using System;
-using System.Globalization;
+﻿using System.Globalization;
 using Core;
 using Events;
 using TMPro;
@@ -11,7 +10,8 @@ namespace UI
     {
         [SerializeField]
         private TMP_Text currentCashText;
-
+        [SerializeField]
+        private SpeechUI newOrderPopup;
         private void Start()
         {
             if (LevelManager.Instance.currentLevel.Contains("Level"))
@@ -32,6 +32,7 @@ namespace UI
         private void OnDisable()
         {
             GameEvents.OnWalletUpdatedEvent -= UpdateCash;
+
         }
         private void UpdateCash(float value)
         {

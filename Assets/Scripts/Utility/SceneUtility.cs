@@ -26,4 +26,10 @@ public class SceneUtility : MonoBehaviour
     {
         GameEvents.OnLoadNextSceneEvent?.Invoke();
     }
+
+    public static void GetNextOrder()
+    {
+        GameEvents.OnRequestNewLevelEvent?.Invoke();
+    }
+    
 }

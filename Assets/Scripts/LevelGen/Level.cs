@@ -1,11 +1,10 @@
 using Events;
 using ScriptableObjects;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class Level : MonoBehaviour
 {
-    [FormerlySerializedAs("level")] [SerializeField]
+    [SerializeField]
     public LevelData levelData;
     [SerializeField][ReadOnly]
     private bool levelIsComplete, levelCompleteEventSent;
@@ -20,11 +19,14 @@ public class Level : MonoBehaviour
     {
         if(!levelCompleteEventSent)
             GameEvents.OnLevelCompletedEvent += CheckLevelCompleted;
+        
+        
     }
     
     private void OnDisable()
     {
         GameEvents.OnLevelCompletedEvent -= CheckLevelCompleted;
+   
     }
 
     private void CheckLevelCompleted()

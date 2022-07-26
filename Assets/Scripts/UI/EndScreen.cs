@@ -1,5 +1,6 @@
-using System.ComponentModel;
+using System;
 using Core;
+using Events;
 using ScriptableObjects;
 using TMPro;
 using UnityEngine;
@@ -30,7 +31,7 @@ public class EndScreen : MonoBehaviour
         // todo: this level data thingy is not good here. I don't like. Should be decoupled.
         if (GameObject.Find("LevelData")) {
             levelData = GameObject.Find("LevelData").GetComponent<Level>().levelData;
-            UpdateDescription(levelData.cashReward);
+            UpdateDescription(levelData.CashReward, PlayerManager.Instance.cashBonusModifier);
         }
         else
         {
@@ -41,20 +42,23 @@ public class EndScreen : MonoBehaviour
     private void OnEnable()
     {
         SceneManager.sceneUnloaded += DestroyEndScreen;
+        GameEvents.OnRequestNewLevelEvent += OnDestroy;
     }
     private void OnDisable()
     {
         SceneManager.sceneUnloaded -= DestroyEndScreen;
+        GameEvents.OnRequestNewLevelEvent -= OnDestroy;
     }
     
     private void Start()
     {
         if(levelData != null)
-            UpdateDescription(levelData.cashReward);
+            UpdateDescription(levelData.CashReward, PlayerManager.Instance.cashBonusModifier);
 
         if (!LevelManager.Instance.nextLevel.Contains("Level "))
         {
             buttonText.text = fallBackButtonText;
+            _button.onClick.AddListener(SessionEnd);
         }
         else
         {
@@ -62,9 +66,15 @@ public class EndScreen : MonoBehaviour
         }
     }
 
-    private void UpdateDescription(float valueToAdd)
+    private void SessionEnd()
     {
-        descriptionText.text = $"You gained ${valueToAdd}";
+        GameEvents.OnSessionEndedEvent?.Invoke();
+    }
+
+    private void UpdateDescription(float valueToAdd, float multiplier)
+    {
+        descriptionText.text = $"You gained ${valueToAdd} multiplied by {multiplier}";
+        descriptionText.text += $" that's a total of ${valueToAdd * multiplier}";
     }
 
     TMP_Text FindTextObject(string nameOfObject)
@@ -74,7 +84,11 @@ public class EndScreen : MonoBehaviour
     
     private void DestroyEndScreen(Scene arg0)
     {
-        Destroy(this.gameObject);
+        OnDestroy();
     }
     
+    private void OnDestroy()
+    {
+        Destroy(this.gameObject, 0.5f);
+    }
 }

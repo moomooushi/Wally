@@ -509,6 +509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   constructionMaterial: {fileID: 11400000, guid: 40207d1a805c86d48953430fe0a42fb5, type: 2}
+  clipPlayWaitTime: 0.01
 --- !u!1001 &1511917515
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -760,6 +761,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelData
       objectReference: {fileID: 0}
+    - target: {fileID: 4095342692554296213, guid: 3c1da7f469921a94f88943746c90c9ac, type: 3}
+      propertyPath: levelData
+      value: 
+      objectReference: {fileID: 11400000, guid: 0d914aac3d521184899ed427cc3633ac, type: 2}
     - target: {fileID: 4095342692554296218, guid: 3c1da7f469921a94f88943746c90c9ac, type: 3}
       propertyPath: m_RootOrder
       value: 7
