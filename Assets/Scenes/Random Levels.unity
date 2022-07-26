@@ -1083,6 +1083,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2676324404616276845, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676324404616276845, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
+      propertyPath: m_NormalizedViewPortRect.height
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2676324404616276850, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
       propertyPath: m_CropFrameX
       value: 0
