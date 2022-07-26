@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e92811c179d43a7ab0db77ef73869b1, type: 3}
   m_Name: Fluid_gin
   m_EditorClassIdentifier: 
-  name: 
-  color: {r: 0.745283, g: 0.745283, b: 0.745283, a: 0}
-  prefab: {fileID: 0}
-  ingredientPrice: 0
+  name: Gin
+  color: {r: 0.6694998, g: 0.8018868, b: 0.7979167, a: 1}
+  prefab: {fileID: 6963497365499002972, guid: ca4eef4d49a71e049916154ed1a89e6e, type: 3}
+  ingredientPrice: 2
   preferredReceptacle: {fileID: 11400000, guid: a6deb84fdbbef86449d7768f582ea1df, type: 2}

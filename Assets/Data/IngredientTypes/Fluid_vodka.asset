@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e92811c179d43a7ab0db77ef73869b1, type: 3}
   m_Name: Fluid_vodka
   m_EditorClassIdentifier: 
-  name: 
-  color: {r: 0.8773585, g: 0.8773585, b: 0.8773585, a: 0}
-  prefab: {fileID: 0}
-  ingredientPrice: 0
+  name: Vodka
+  color: {r: 0.8584906, g: 0.8584906, b: 0.8584906, a: 1}
+  prefab: {fileID: 6963497365499002972, guid: ca4eef4d49a71e049916154ed1a89e6e, type: 3}
+  ingredientPrice: 1
   preferredReceptacle: {fileID: 11400000, guid: 6a03a4749a000f3489a964b10b49032c, type: 2}
