@@ -16,3 +16,4 @@ MonoBehaviour:
   color: {r: 0.8773585, g: 0.8773585, b: 0.8773585, a: 0}
   prefab: {fileID: 0}
   ingredientPrice: 0
+  preferredReceptacle: {fileID: 11400000, guid: 6a03a4749a000f3489a964b10b49032c, type: 2}

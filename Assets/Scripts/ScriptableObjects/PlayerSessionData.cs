@@ -2,6 +2,7 @@
 using Events;
 using ScriptableObjects.Receptacles;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace ScriptableObjects
 {
@@ -11,12 +12,12 @@ namespace ScriptableObjects
         [SerializeField][ReadOnly]
         private float currentCash;
         public List<BottleType> inventory = new();
-        [SerializeField]
-        private float _cashBonusModifier;
+        [FormerlySerializedAs("_cashBonusModifier")] [SerializeField]
+        private float cashBonusModifier;
         public float CashBonusModifier
         {
-            get => _cashBonusModifier;
-            set => _cashBonusModifier = value;
+            get => cashBonusModifier;
+            set => cashBonusModifier = value;
         }
 
         public float CurrentCash
@@ -37,7 +38,8 @@ namespace ScriptableObjects
 
         private void UpdateCurrentCash(float valueToAdd)
         {
-            CurrentCash += valueToAdd * CashBonusModifier;
+            float valueTimesCashBonus = valueToAdd * CashBonusModifier;
+            CurrentCash += valueTimesCashBonus;
             GameEvents.OnWalletUpdatedEvent?.Invoke(CurrentCash);
         }
 

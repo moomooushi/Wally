@@ -2,6 +2,8 @@ using Events;
 using Ingredients;
 using ScriptableObjects;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 public class Glass : Receptacle
 {
     
@@ -15,7 +17,7 @@ public class Glass : Receptacle
         if (other.GetComponent<Fluid>())
         {
             FluidType otherType = other.GetComponent<Fluid>().fluidType;
-            GameEvents.OnIngredientEnterGlassEvent?.Invoke(otherType, this.receptacleType);
+            GameEvents.OnIngredientEnterGlassEvent?.Invoke(otherType, this.receptacleType, SceneManager.GetActiveScene().name);
         }
     }
 
@@ -27,7 +29,7 @@ public class Glass : Receptacle
         if (other.GetComponent<Fluid>())
         {
             FluidType otherType = other.GetComponent<Fluid>().fluidType;
-            GameEvents.OnIngredientExitGlassEvent?.Invoke(otherType, this.receptacleType);
+            GameEvents.OnIngredientExitGlassEvent?.Invoke(otherType, this.receptacleType, SceneManager.GetActiveScene().name);
         }
     }
 }

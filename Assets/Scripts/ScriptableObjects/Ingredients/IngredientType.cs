@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using ScriptableObjects.Receptacles;
+using UnityEngine;
 
 namespace ScriptableObjects.Ingredients
 {
@@ -8,5 +9,6 @@ namespace ScriptableObjects.Ingredients
         public Color color;
         public GameObject prefab;
         public float ingredientPrice;
+        public ReceptacleType preferredReceptacle;
     }
 }

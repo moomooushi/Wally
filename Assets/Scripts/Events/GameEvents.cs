@@ -1,4 +1,5 @@
-﻿using ScriptableObjects;
+﻿using Core;
+using ScriptableObjects;
 using ScriptableObjects.Ingredients;
 using ScriptableObjects.Receptacles;
 using UnityEngine;
@@ -7,8 +8,8 @@ namespace Events
 {
     public class GameEvents
     {
-        public delegate void FluidInGlass(IngredientType ingredientType, ReceptacleType receptacleType);
-        public delegate void FluidExitGlass(IngredientType ingredientType, ReceptacleType receptacleType);
+        public delegate void FluidInGlass(IngredientType ingredientType, ReceptacleType receptacleType, string levelName);
+        public delegate void FluidExitGlass(IngredientType ingredientType, ReceptacleType receptacleType, string levelName);
         public delegate void DetermineLevelCompletion();
         public delegate void LevelCompleted();
         public delegate void LoadEndState();
