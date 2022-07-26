@@ -47,6 +47,7 @@ namespace LevelGen
             if(level) {
                 level.levelData = levelDataGenerator.GenerateNewLevelData();
                 levelData = level.levelData;
+                levelData.name = "Random Levels";
             }
             GameEvents.OnNewLevelCreatedEvent?.Invoke(level);
         }

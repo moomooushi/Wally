@@ -64,24 +64,32 @@ namespace ScriptableObjects
             ResetValues();
         }
 
-        public void IncreaseCount(IngredientType ingredientType, ReceptacleType receptacleRequirement)
+        public void IncreaseCount(IngredientType ingredientType, ReceptacleType receptacleRequirement, string name)
         {
-            var i = ingredientsList.FirstOrDefault(s => s.ingredientType == ingredientType && s.receptacleRequirement == receptacleRequirement);
-            
-            if(i != null)
-                i.IncreaseCount();
-            
-            GameEvents.OnIngredientUpdatedEvent?.Invoke();
+            if(name == this.name)
+            {
+                var i = ingredientsList.FirstOrDefault(s =>
+                    s.ingredientType == ingredientType && s.receptacleRequirement == receptacleRequirement);
+
+                if (i != null)
+                    i.IncreaseCount();
+
+                GameEvents.OnIngredientUpdatedEvent?.Invoke();
+            }
         }
         
-        public void ReduceCount(IngredientType ingredientType, ReceptacleType receptacleRequirement)
+        public void ReduceCount(IngredientType ingredientType, ReceptacleType receptacleRequirement, string name)
         {
-            var i = ingredientsList.FirstOrDefault(s => s.ingredientType == ingredientType && s.receptacleRequirement == receptacleRequirement);
-           
-            if(i != null )
-                i.ReduceCount();
-            
-            GameEvents.OnIngredientUpdatedEvent?.Invoke();
+            if(name == this.name)
+            {
+                var i = ingredientsList.FirstOrDefault(s =>
+                    s.ingredientType == ingredientType && s.receptacleRequirement == receptacleRequirement);
+
+                if (i != null)
+                    i.ReduceCount();
+
+                GameEvents.OnIngredientUpdatedEvent?.Invoke();
+            }
         }
 
         void ResetValues()
