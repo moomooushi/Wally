@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6396310365964039007}
   - component: {fileID: 4617254663263629625}
   - component: {fileID: 6013916472504475025}
+  - component: {fileID: 8506616039318430870}
   m_Layer: 5
   m_Name: Order
   m_TagString: Untagged
@@ -132,3 +133,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orderUIPrefab: {fileID: 5255704903476174776, guid: 2b2b6f04a53f98a418131e2d229b10ad, type: 3}
+--- !u!225 &8506616039318430870
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3336972405429040769}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
