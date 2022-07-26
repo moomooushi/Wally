@@ -16,5 +16,5 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: f7267b97540d33e4aa6f5fb481bfbbaa, type: 3}
   ingredientType: {fileID: 11400000, guid: eadfdd55ea9fb9945b3cb6b764dbae5b, type: 2}
   constructionMaterial: {fileID: 11400000, guid: ff18cac80dd8f8a4e943e07107353ffc, type: 2}
-  fillCount: 30
-  totalPrice: 12.5
+  fillCount: 60
+  totalPrice: 15
