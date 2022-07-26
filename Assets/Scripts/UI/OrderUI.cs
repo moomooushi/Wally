@@ -10,14 +10,17 @@ namespace UI
     {
         [SerializeField]
         GameObject orderUIPrefab;
+        private CanvasGroup _canvasAlpha;
 
-        private CanvasGroup canvasAlpha;
-
+        private void Awake()
+        {
+            _canvasAlpha = this.GetComponent<CanvasGroup>();
+            _canvasAlpha.alpha = 0;
+            
+        }
         private void Start()
         {
-            canvasAlpha = this.GetComponent<CanvasGroup>();
-            canvasAlpha.alpha = 0;
-            
+            _canvasAlpha.DOFade(1, 1);
         }
 
         private void OnEnable()
@@ -40,7 +43,6 @@ namespace UI
                 Destroy(GetComponentInChildren<OrderEntryUI>().gameObject);
             }
             
-            canvasAlpha.DOFade(1, 1);
 
 
             LevelData levelData = level.levelData;
