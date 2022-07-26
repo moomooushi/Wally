@@ -1083,6 +1083,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2676324404616276850, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
+      propertyPath: m_CropFrameX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676324404616276850, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
+      propertyPath: m_CropFrameY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676324404616276850, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
+      propertyPath: m_PixelSnapping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2676324404616276851, guid: a1a90a3cf7728d34db7360fde48e6ca3, type: 3}
       propertyPath: m_Name
       value: Pixel Perfect Camera
@@ -2701,6 +2713,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2795018781947857590, guid: 9e9aad8d71fe7db4e94c58a67c660719, type: 3}
+      propertyPath: m_PixelPerfect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2795018781947857591, guid: 9e9aad8d71fe7db4e94c58a67c660719, type: 3}
       propertyPath: m_Pivot.x
       value: 0
