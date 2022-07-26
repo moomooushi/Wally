@@ -5,6 +5,11 @@ using ScriptableObjects;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum GameMode {
+    Random,
+    Progressive
+}
+
 namespace Core
 {
     public class LevelManager : MonoBehaviour
@@ -20,6 +25,7 @@ namespace Core
         public GameObject levelCompleteUI;
         [SerializeField][ReadOnly] private bool runCoroutine;
         [SerializeField] private string fallBackScene = "MainMenu";
+        public GameMode gameMode = GameMode.Random;
         public bool RunCoroutine
         {
             get => runCoroutine;
@@ -44,16 +50,18 @@ namespace Core
         {
             SceneManager.sceneLoaded += OnSceneLoaded;
             GameEvents.OnShowLevelEndStateEvent += LoadEndState;
-            GameEvents.OnLoadNextSceneEvent += LoadNextScene;
             GameEvents.OnNewLevelCreatedEvent += GetCurrentLevelData;
+            
+            if(gameMode == GameMode.Progressive)
+                GameEvents.OnLoadNextSceneEvent += LoadNextScene;
         }
 
         private void OnDisable()
         {
             SceneManager.sceneLoaded -= OnSceneLoaded;
             GameEvents.OnShowLevelEndStateEvent -= LoadEndState;
-            GameEvents.OnLoadNextSceneEvent -= LoadNextScene;
             GameEvents.OnNewLevelCreatedEvent -= GetCurrentLevelData;
+            GameEvents.OnLoadNextSceneEvent -= LoadNextScene;
         }
 
         private void LoadEndState()
@@ -89,7 +97,7 @@ namespace Core
             currentSceneBuildID = scene.buildIndex;
             // We don't need this code below to run if we are in the random level mode
             GetCurrentLevelData(null);
-            if (scene.name == "Random Levels")
+            if (gameMode == GameMode.Random)
             {
                 return;
             }
@@ -118,7 +126,6 @@ namespace Core
                     currentLevel = SceneManager.GetActiveScene().name;
                 }  
             }
-            // todo when the current level data is updated we need to alert the UI so that it can write a new mission UI 
         }
 
         void FindLevelDataInScene(string toFind)

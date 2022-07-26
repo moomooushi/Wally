@@ -14,7 +14,7 @@ namespace UI
         private SpeechUI newOrderPopup;
         private void Start()
         {
-            if (LevelManager.Instance.currentLevel.Contains("Level"))
+            if (LevelManager.Instance.gameMode == GameMode.Random || LevelManager.Instance.gameMode == GameMode.Progressive)
             {
                 AssignCurrentCashText();
                 currentCashText.text = PlayerManager.Instance.playerCash.ToString(CultureInfo.CurrentCulture);
@@ -43,7 +43,6 @@ namespace UI
             Debug.Log("we are updating the currentCash in the register");
         }
         
-        // Todo: need to complete this method so that when a new scene is loaded we reassign the currentCashText
         void AssignCurrentCashText()
         {
             currentCashText = GameObject.Find("CurrentCashText").GetComponent<TMP_Text>();
