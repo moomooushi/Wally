@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f7267b97540d33e4aa6f5fb481bfbbaa
+guid: 53d2cb277469e8646b3a937fd601d706
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -44,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 64
@@ -52,7 +52,7 @@ TextureImporter:
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: 0
+  spriteTessellationDetail: 1
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -117,24 +117,44 @@ TextureImporter:
     sprites: []
     outline: []
     physicsShape:
-    - - {x: 7, y: 11}
-      - {x: 7, y: 26}
-      - {x: 3, y: 26}
-      - {x: 3, y: 8}
-      - {x: 8, y: 4}
-      - {x: 8, y: -26}
-      - {x: -8, y: -26}
-      - {x: -8, y: 4}
-      - {x: -3, y: 8}
-      - {x: -3, y: 26}
-      - {x: -7, y: 26}
-      - {x: -7, y: 11}
-      - {x: -13, y: 6}
-      - {x: -13, y: -24}
-      - {x: -8, y: -29}
-      - {x: 8, y: -29}
-      - {x: 13, y: -24}
-      - {x: 13, y: 6}
+    - - {x: 15, y: -17}
+      - {x: 16, y: -4}
+      - {x: 17, y: 8}
+      - {x: 17, y: 18}
+      - {x: 12, y: 22}
+      - {x: 7, y: 22}
+      - {x: 7, y: 28}
+      - {x: 5, y: 30}
+      - {x: 3, y: 30}
+      - {x: 3, y: 18}
+      - {x: 10, y: 18}
+      - {x: 12, y: 16}
+      - {x: 12, y: 10}
+      - {x: 10, y: -2}
+      - {x: 9, y: -14}
+      - {x: 10, y: -27}
+      - {x: -10, y: -27}
+      - {x: -9, y: -14}
+      - {x: -10, y: -2}
+      - {x: -12, y: 10}
+      - {x: -12, y: 16}
+      - {x: -10, y: 18}
+      - {x: -3, y: 18}
+      - {x: -3, y: 30}
+      - {x: -5, y: 30}
+      - {x: -7, y: 28}
+      - {x: -7, y: 22}
+      - {x: -12, y: 22}
+      - {x: -17, y: 18}
+      - {x: -17, y: 8}
+      - {x: -16, y: -4}
+      - {x: -15, y: -17}
+      - {x: -15, y: -20}
+      - {x: -15, y: -28}
+      - {x: -11, y: -32}
+      - {x: 11, y: -32}
+      - {x: 15, y: -28}
+      - {x: 15, y: -20}
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
     internalID: 1537655665
