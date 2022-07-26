@@ -674,7 +674,7 @@ GameObject:
   - component: {fileID: 661605899}
   - component: {fileID: 661605898}
   m_Layer: 0
-  m_Name: Ambience Brighton Pub Crowd Walla Chatter Cutlery Loop
+  m_Name: BG Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -692,7 +692,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f89ab6789fd73f249af03c9fc3dab136, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
